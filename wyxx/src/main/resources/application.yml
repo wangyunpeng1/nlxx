@@ -1,0 +1,6 @@
+server:
+  port: 9997
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ttxs:9999/eureka/
