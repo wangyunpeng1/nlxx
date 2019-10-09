@@ -8,3 +8,16 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://127.0.0.1:${server.port}/eureka/
+
+spring:
+  application:
+    name: ttxs-mq
+  rabbitmq:
+    host: 121.199.31.35
+
+aliyun:
+  sms:
+    accessKeyId: LTAIqZ0Qls3OCgG0
+    accessKeySecret: 1AHI5UHXPPCKfCbSQBU3v7bkkkReHW
+    templateCode: SMS_164512688
+    signName: 雨季注册

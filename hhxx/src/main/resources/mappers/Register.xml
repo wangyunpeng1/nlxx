@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.xx.dao.RegisterDao">
+    <select id="isExistPhone" parameterType="com.xx.vo.User" resultType="java.lang.Boolean">
+        <![CDATA[select count(phone) from user ]]>
+    </select>
+    <select id="isExistAccount" parameterType="com.xx.vo.User" resultType="java.lang.Boolean">
+        <![CDATA[select count(account) from user ]]>
+    </select>
+    <insert id="registerUser" parameterType="com.xx.vo.User">
+        insert into user (userId,account,password,admin,phone)
+        values (#{userId},#{account},#{password},#{admin},#{phone})
+    </insert>
+</mapper>

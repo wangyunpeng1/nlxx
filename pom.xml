@@ -12,6 +12,7 @@
         <module>hhxx</module>
         <module>wyxx</module>
         <module>ttxs</module>
+        <module>ffxx</module>
     </modules>
     <dependencies>
         <dependency>
