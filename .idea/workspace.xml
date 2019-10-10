@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac6ea37e-dc6c-49e1-98dd-3b4c277974ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/UserInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/UserInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/resources/mappers/UserInfo.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/LoginDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/RegisterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/RegisterDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/LoginService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/RegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/resources/mappers/Login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/resources/mappers/Login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hhxx/src/main/resources/mappers/Register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/resources/mappers/Register.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,34 +43,34 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="37" />
-          <entry key="xml" value="13" />
-          <entry key="yml" value="7" />
+          <entry key="java" value="44" />
+          <entry key="xml" value="15" />
+          <entry key="yml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="37" />
-          <entry key="XML" value="13" />
-          <entry key="YAML" value="7" />
+          <entry key="JAVA" value="44" />
+          <entry key="XML" value="15" />
+          <entry key="YAML" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="3" />
-          <entry key="java" value="3493" />
+          <entry key="java" value="4062" />
           <entry key="txt" value="2" />
-          <entry key="xml" value="310" />
+          <entry key="xml" value="609" />
           <entry key="yml" value="121" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3493" />
+          <entry key="JAVA" value="4062" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="SQL" value="1" />
-          <entry key="XML" value="309" />
+          <entry key="SQL" value="8" />
+          <entry key="XML" value="601" />
           <entry key="YAML" value="121" />
         </counts>
       </usages-collector>
@@ -79,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/RegisterService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="305">
+              <caret line="118" column="12" lean-forward="true" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,26 +91,73 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/config/SecurityConfig.java">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+            <state relative-caret-position="325">
+              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#913#914#0" expanded="true" />
-                <element signature="e#963#964#0" expanded="true" />
+                <element signature="e#409#410#0" expanded="true" />
+                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#482#483#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#598#599#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
+                <element signature="e#672#673#0" expanded="true" />
+                <element signature="e#704#705#0" expanded="true" />
+                <element signature="e#732#733#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
+                <element signature="e#808#809#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#910#911#0" expanded="true" />
+                <element signature="e#944#945#0" expanded="true" />
+                <element signature="e#974#975#0" expanded="true" />
+                <element signature="e#1000#1001#0" expanded="true" />
+                <element signature="e#1086#1087#0" expanded="true" />
+                <element signature="e#1116#1117#0" expanded="true" />
+                <element signature="e#1152#1153#0" expanded="true" />
+                <element signature="e#1180#1181#0" expanded="true" />
+                <element signature="e#1170#1171#0" expanded="true" />
+                <element signature="e#1204#1205#0" expanded="true" />
+                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="e#1278#1279#0" expanded="true" />
+                <element signature="e#1334#1335#0" expanded="true" />
+                <element signature="e#1382#1383#0" expanded="true" />
+                <element signature="e#1445#1446#0" expanded="true" />
+                <element signature="e#1480#1481#0" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
+                <element signature="e#1584#1585#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/LoginController.java">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="275">
+              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#292#293#0" expanded="true" />
+                <element signature="e#336#337#0" expanded="true" />
+                <element signature="e#372#373#0" expanded="true" />
+                <element signature="e#420#421#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#482#483#0" expanded="true" />
+                <element signature="e#520#521#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#634#635#0" expanded="true" />
+                <element signature="e#674#675#0" expanded="true" />
+                <element signature="e#706#707#0" expanded="true" />
+                <element signature="e#734#735#0" expanded="true" />
+                <element signature="e#814#815#0" expanded="true" />
+                <element signature="e#848#849#0" expanded="true" />
+                <element signature="e#884#885#0" expanded="true" />
+                <element signature="e#912#913#0" expanded="true" />
+                <element signature="e#958#959#0" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,10 +166,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="200">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding>
-                <element signature="e#130#131#0" expanded="true" />
                 <element signature="e#160#161#0" expanded="true" />
                 <element signature="e#206#207#0" expanded="true" />
                 <element signature="e#244#245#0" expanded="true" />
@@ -134,53 +182,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserInfo.java">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#409#410#0" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#518#519#0" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
-                <element signature="e#584#585#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-                <element signature="e#672#673#0" expanded="true" />
-                <element signature="e#704#705#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
-                <element signature="e#774#775#0" expanded="true" />
-                <element signature="e#808#809#0" expanded="true" />
-                <element signature="e#840#841#0" expanded="true" />
-                <element signature="e#868#869#0" expanded="true" />
-                <element signature="e#910#911#0" expanded="true" />
-                <element signature="e#944#945#0" expanded="true" />
-                <element signature="e#974#975#0" expanded="true" />
-                <element signature="e#1000#1001#0" expanded="true" />
-                <element signature="e#1038#1039#0" expanded="true" />
-                <element signature="e#1068#1069#0" expanded="true" />
-                <element signature="e#1100#1101#0" expanded="true" />
-                <element signature="e#1128#1129#0" expanded="true" />
-                <element signature="e#1170#1171#0" expanded="true" />
-                <element signature="e#1204#1205#0" expanded="true" />
-                <element signature="e#1243#1244#0" expanded="true" />
-                <element signature="e#1278#1279#0" expanded="true" />
-                <element signature="e#1334#1335#0" expanded="true" />
-                <element signature="e#1382#1383#0" expanded="true" />
-                <element signature="e#1421#1422#0" expanded="true" />
-                <element signature="e#1456#1457#0" expanded="true" />
-                <element signature="e#1512#1513#0" expanded="true" />
-                <element signature="e#1560#1561#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/LoginDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="425">
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -189,10 +194,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/RegisterDao.java">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/UserInfoDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="175">
+              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -201,19 +206,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/Login.xml">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/UserInfoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="300">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#354#355#0" expanded="true" />
+                <element signature="e#370#371#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/RegisterController.java">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/RegisterDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="52" column="16" lean-forward="true" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+            <state relative-caret-position="325">
+              <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -222,13 +232,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/LoginService.java">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/UserInfo.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="275">
+              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/Register.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="17" column="51" lean-forward="true" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -268,8 +284,6 @@
         <option value="$PROJECT_DIR$/wyxx/src/main/java/com/xx/WyxxApplication.java" />
         <option value="$PROJECT_DIR$/wyxx/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/User.java" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserInfo.java" />
         <option value="$PROJECT_DIR$/ffxx/src/main/java/com/xx/vo/Result.java" />
         <option value="$PROJECT_DIR$/ttxs/pom.xml" />
         <option value="$PROJECT_DIR$/ttxs/src/main/resources/application.yml" />
@@ -278,16 +292,22 @@
         <option value="$PROJECT_DIR$/hhxx/pom.xml" />
         <option value="$PROJECT_DIR$/hhxx/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/ffxx/src/main/java/com/xx/vo/StatusCode.java" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/resources/mappers/Register.xml" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Login.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/resources/mappers/Login.xml" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/LoginDao.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/LoginService.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/UserInfoDao.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/mappers/UserInfo.xml" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/mappers/Register.xml" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/RegisterDao.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/RegisterService.java" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/LoginService.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Login.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/User.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserInfo.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/UserInfoService.java" />
       </list>
     </option>
   </component>
@@ -320,7 +340,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="545" />
+    <option name="x" value="628" />
     <option name="y" value="10" />
     <option name="width" value="1395" />
     <option name="height" value="1050" />
@@ -342,41 +362,6 @@
             <path>
               <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
               <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="ffxx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="ffxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="ffxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="ffxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="ffxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
               <item name="hhxx" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -408,16 +393,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="xx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="hhxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="xx" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
@@ -476,66 +451,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mappers" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="wyxx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="wyxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="wyxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="wyxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="wyxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="xx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="wyxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="xx" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="wyxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
-              <item name="wyxx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -550,7 +465,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570615480663" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570703422946" />
     <property name="last_opened_file_path" value="D:/SYN/bin/svn.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -645,7 +560,7 @@
       <workItem from="1570522784811" duration="2177000" />
       <workItem from="1570584062717" duration="17086000" />
       <workItem from="1570609667863" duration="5670000" />
-      <workItem from="1570670453233" duration="7567000" />
+      <workItem from="1570670453233" duration="14336000" />
     </task>
     <task id="LOCAL-00001" summary="博客">
       <created>1570531349175</created>
@@ -668,11 +583,18 @@
       <option name="project" value="LOCAL" />
       <updated>1570615464246</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="博客">
+      <created>1570694794950</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570694794950</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36817000" />
+    <option name="totallyTimeSpent" value="43586000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -824,46 +746,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ffxx/src/main/java/com/xx/vo/Result.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#586#587#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#842#843#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -878,13 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/Register.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -930,26 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/RegisterDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/RegisterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/LoginService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -960,12 +819,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/Login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/UserInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/RegisterDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/Register.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="51" lean-forward="true" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/UserInfo.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/RegisterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="118" column="12" lean-forward="true" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="200">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding>
-            <element signature="e#130#131#0" expanded="true" />
             <element signature="e#160#161#0" expanded="true" />
             <element signature="e#206#207#0" expanded="true" />
             <element signature="e#244#245#0" expanded="true" />
@@ -977,17 +893,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserInfo.java">
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
           <folding>
             <element signature="e#409#410#0" expanded="true" />
             <element signature="e#438#439#0" expanded="true" />
             <element signature="e#482#483#0" expanded="true" />
             <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#598#599#0" expanded="true" />
             <element signature="e#632#633#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
             <element signature="e#704#705#0" expanded="true" />
@@ -1000,28 +944,43 @@
             <element signature="e#944#945#0" expanded="true" />
             <element signature="e#974#975#0" expanded="true" />
             <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="e#1068#1069#0" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1116#1117#0" expanded="true" />
+            <element signature="e#1152#1153#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
             <element signature="e#1170#1171#0" expanded="true" />
             <element signature="e#1204#1205#0" expanded="true" />
             <element signature="e#1243#1244#0" expanded="true" />
             <element signature="e#1278#1279#0" expanded="true" />
             <element signature="e#1334#1335#0" expanded="true" />
             <element signature="e#1382#1383#0" expanded="true" />
-            <element signature="e#1421#1422#0" expanded="true" />
-            <element signature="e#1456#1457#0" expanded="true" />
-            <element signature="e#1512#1513#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1480#1481#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/Login.xml">
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/UserInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

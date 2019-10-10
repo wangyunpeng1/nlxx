@@ -2,12 +2,15 @@ package com.xx.service;
 
 import com.xx.dao.RegisterDao;
 import com.xx.vo.User;
+import com.xx.vo.UserInfo;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -35,11 +38,15 @@ public class RegisterService
             String endcoderPassword = encoder.encode(user.getPassword());
             user.setPassword(endcoderPassword);
             registerDao.registerUser(user);
+            UserInfo userInfo = new UserInfo();
+            userInfo.setUserId(userId);
+            userInfo.setPhone(user.getPhone());
+            userInfo.setRegisterDate(getTime());
+            registerDao.registerUserInfo(userInfo);
             return true;
         }else{
             return false;
         }
-
     }
 
     //Id+1
@@ -107,5 +114,13 @@ public class RegisterService
     {
         boolean flag = registerDao.isExistPhone(phone);
         return flag;
+    }
+
+    //获取当前时间
+    public String getTime()
+    {
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
+        return dateFormat.format(date);
     }
 }

@@ -13,4 +13,8 @@
         insert into user (userId,account,password,admin,phone)
         values (#{userId},#{account},#{password},#{admin},#{phone})
     </insert>
+    <insert id="registerUserInfo" parameterType="com.xx.vo.UserInfo">
+        insert into userInfo (userId,phone,registerDate)
+        values (#{userId},#{phone},#{registerDate})
+    </insert>
 </mapper>
