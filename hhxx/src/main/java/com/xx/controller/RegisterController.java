@@ -23,15 +23,20 @@ public class RegisterController
      * @return
      */
     @PostMapping("register")
-    public Result registerUser(@RequestBody User user)
+    public Result registerUser(@RequestBody User user,@PathVariable String code)
     {
         boolean flag = registerService.isExistAccount(user.getAccount());
         if (flag)
         {
             return new Result(true, StatusCode.AccountError,"该账号已注册");
         }else{
-            registerService.registerUser(user);
-            return new Result(true,StatusCode.OK,"注册成功");
+            boolean bl = registerService.registerUser(user,code);
+            if (bl)
+            {
+                return new Result(true,StatusCode.OK,"注册成功");
+            }else {
+                return new Result(true,StatusCode.CodeError,"验证码错误或已过期");
+            }
         }
 
     }

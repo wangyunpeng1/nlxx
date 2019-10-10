@@ -5,6 +5,7 @@ import com.xx.vo.User;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -20,16 +21,28 @@ public class RegisterService
     private RedisTemplate redisTemplate;
     @Autowired
     private RabbitTemplate rabbitTemplate;
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
     //注册
-    public void registerUser(User user)
+    public boolean registerUser(User user,String code)
     {
-        String userId = getId();
-        user.setUserId(userId);
-        user.setAdmin("0");
-        registerDao.registerUser(user);
+        if (code.equals((String)redisTemplate.opsForValue().get("SmsCode"+user.getPhone())))
+        {
+            String userId = getId();
+            user.setUserId(userId);
+            user.setAdmin("0");
+            String endcoderPassword = encoder.encode(user.getPassword());
+            user.setPassword(endcoderPassword);
+            registerDao.registerUser(user);
+            return true;
+        }else{
+            return false;
+        }
+
     }
-    //Id自增
+
+    //Id+1
     public String getId()
     {
         boolean flag = redisTemplate.hasKey("userId");
@@ -45,6 +58,7 @@ public class RegisterService
         System.out.println(userId);
         return userId;
     }
+
     //发送验证码
     public void sendCode(String phone,String code)
     {
@@ -54,6 +68,7 @@ public class RegisterService
         System.out.println(phone+":"+code);
         rabbitTemplate.convertAndSend("sms",map);
     }
+
     //取验证码
     public String getSmsCode(String phone)
     {
@@ -68,6 +83,7 @@ public class RegisterService
             return (String)redisTemplate.opsForValue().get("SmsCode"+phone);
         }
     }
+
     //生成验证码
     public static String createCode()
     {
@@ -78,12 +94,14 @@ public class RegisterService
         }
             return code;
     }
+
     //判断账号是否已经被注册
     public boolean isExistAccount(String account)
     {
         boolean flag = registerDao.isExistAccount(account);
         return flag;
     }
+
     //判断手机号是否已经被注册
     public boolean isExistPhone(String phone)
     {

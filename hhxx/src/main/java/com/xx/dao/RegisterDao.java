@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Mapper
 @Component
-public interface RegisterDao {
+public interface RegisterDao
+{
     public boolean isExistPhone(@Param("phone") String phone);
     public boolean isExistAccount(@Param("account") String account);
     public void registerUser(User user);
