@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.xx.dao.UserDao">
+    <insert id="userFlow" parameterType="com.xx.vo.UserFans">
+        insert into userFans (userId,fansId)
+        values (#{userId},#{fansId})
+    </insert>
+
+    <select id="userBlogs" parameterType="com.xx.vo.UserBlog" resultType="">
+        select blogId from userBlogs where userId = #{userId}
+    </select>
+
+    <insert id="userCollectionBlogs" parameterType="com.xx.vo.UserBlog">
+        insert into userCollectionBlogs (userId,blogId)
+        values (#{userId},#{blogId})
+    </insert>
+
+    <select id="lookUserCollectionBlogs" parameterType="com.xx.vo.UserBlog" resultType="">
+        select blogId from userCollectionBlogs
+        where userId = #{userId}
+    </select>
+
+    <select id="userSum" parameterType="com.xx.vo.UserSum" resultType="">
+        select fabulous,fans,blogs,visit from userSum
+        where userId = #{userId}
+    </select>
+
+</mapper>

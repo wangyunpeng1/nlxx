@@ -14,6 +14,12 @@ public class UserInfoController
 {
     @Autowired
     private UserInfoService userInfoService;
+
+    /**
+     * 更改个人信息
+     * @param userInfo
+     * @return
+     */
     @PostMapping("userInfo")
     public Result updateUserInfo(@RequestBody UserInfo userInfo)
     {

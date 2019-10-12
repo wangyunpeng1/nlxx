@@ -11,8 +11,11 @@ import org.springframework.stereotype.Component;
 public interface RegisterDao
 {
     public boolean isExistPhone(@Param("phone") String phone);
+
     public boolean isExistAccount(@Param("account") String account);
+
     public void registerUser(User user);
+
     public void registerUserInfo(UserInfo userInfo);
 
 }
