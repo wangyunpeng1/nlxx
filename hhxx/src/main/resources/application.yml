@@ -9,13 +9,16 @@ spring:
     name: nlxx
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://121.199.31.35:3306/nlxx?characterEncoding=utf-8
+    url: jdbc:mysql://121.199.31.35:3306/nlxx?characterEncoding=utf-8&useSSL=false
     username: wypawj
     password: 123
   redis:
     host: 121.199.31.35
   rabbitmq:
     host: 121.199.31.35
+    username: root
+    password: root
+    port: 5672
 
 mybatis:
   mapperLocations: classpath:mappers/*.xml

@@ -1,15 +1,14 @@
 package com.xx.controller;
 
 import com.xx.service.UserService;
-import com.xx.vo.Result;
-import com.xx.vo.StatusCode;
-import com.xx.vo.UserBlog;
-import com.xx.vo.UserFans;
+import com.xx.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class UserController
@@ -37,8 +36,8 @@ public class UserController
     @PostMapping("userBlogs")
     public Result userBlogs(@RequestBody UserBlog userBlog)
     {
-        userService.userBlogs(userBlog);
-        return new Result(true, StatusCode.OK,"查询成功");
+        List<UserBlog> userBlogs = userService.userBlogs(userBlog);
+        return new Result(true, StatusCode.OK,"查询成功",userBlogs);
     }
 
     /**
@@ -61,8 +60,8 @@ public class UserController
     @PostMapping("lookUserCollectionBlogs")
     public Result lookUserCollectionBlogs(@RequestBody UserBlog userBlog)
     {
-        userService.lookUserCollectionBlogs(userBlog);
-        return new Result(true, StatusCode.OK,"查看收藏成功");
+        List<UserBlog> userBlogs = userService.lookUserCollectionBlogs(userBlog);
+        return new Result(true, StatusCode.OK,"查看收藏成功",userBlogs);
     }
 
     /**
@@ -73,7 +72,7 @@ public class UserController
     @PostMapping("userSum")
     public Result userSum(@PathVariable String userId)
     {
-        userService.userSum(userId);
-        return new Result(true, StatusCode.OK,"查看各种数成功");
+        List<UserSum> userSums = userService.userSum(userId);
+        return new Result(true, StatusCode.OK,"查看各种数成功",userSums);
     }
 }

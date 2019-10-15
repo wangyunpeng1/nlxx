@@ -1,14 +1,14 @@
 package com.xx.vo;
 
 public class UserBlog {
-    private String userId;
+    private int userId;
     private String blogId;
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

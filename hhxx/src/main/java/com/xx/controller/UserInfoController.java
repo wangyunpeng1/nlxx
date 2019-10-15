@@ -1,13 +1,17 @@
 package com.xx.controller;
 
+import com.sun.javafx.collections.MappingChange;
 import com.xx.service.UserInfoService;
 import com.xx.vo.Result;
 import com.xx.vo.StatusCode;
 import com.xx.vo.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 @RestController
 public class UserInfoController
@@ -25,5 +29,17 @@ public class UserInfoController
     {
         userInfoService.updateUserInfo(userInfo);
         return new Result(true, StatusCode.OK,"修改成功");
+    }
+
+    /**
+     * 获取用户信息
+     * @param userId
+     * @return
+     */
+    @PostMapping("getUserInfo")
+    public Result getUserInfo(@PathVariable String userId)
+    {
+         Map<Object,Object> userInfos = userInfoService.getUserInfo(userId);
+        return new Result(true,StatusCode.OK,"获取成功",userInfos);
     }
 }

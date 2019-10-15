@@ -22,20 +22,20 @@ public class RegisterController
      * @param user
      * @return
      */
-    @PostMapping("register")
+    @PostMapping("register/{code}")
     public Result registerUser(@RequestBody User user,@PathVariable String code)
     {
         boolean flag = registerService.isExistAccount(user.getAccount());
         if (flag)
         {
-            return new Result(true, StatusCode.AccountError,"该账号已注册");
+            return new Result(false, StatusCode.AccountError,"该账号已注册");
         }else{
             boolean bl = registerService.registerUser(user,code);
             if (bl)
             {
                 return new Result(true,StatusCode.OK,"注册成功");
             }else {
-                return new Result(true,StatusCode.CodeError,"验证码错误或已过期");
+                return new Result(false,StatusCode.CodeError,"验证码错误或已过期");
             }
         }
 
@@ -46,13 +46,13 @@ public class RegisterController
      * @param phone
      * @return
      */
-    @PostMapping("sendCode")
+    @PostMapping("sendCode/{phone}")
     public Result sendCode(@PathVariable String phone)
     {
         boolean flag = registerService.isExistPhone(phone);
         if(flag)
         {
-            return new Result(true, StatusCode.ExistPhoneError,"该手机号已注册");
+            return new Result(false, StatusCode.ExistPhoneError,"该手机号已注册");
         }else {
             String code = registerService.getSmsCode(phone);
             registerService.sendCode(phone, code);

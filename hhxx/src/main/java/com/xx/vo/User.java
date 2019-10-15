@@ -2,18 +2,18 @@ package com.xx.vo;
 
 public class User
 {
-    private String userId;      //用户id
+    private int userId;      //用户id
     private String account;     //账号
     private String password;    //密码
     private String admin;       //是否为管理员
     private String phone;       //手机号
 
-    public String getUserId()
+    public int getUserId()
     {
         return userId;
     }
 
-    public void setUserId(String userId)
+    public void setUserId(int userId)
     {
         this.userId = userId;
     }

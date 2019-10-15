@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -26,13 +27,13 @@ public class RegisterService
     private RabbitTemplate rabbitTemplate;
     @Autowired
     private BCryptPasswordEncoder encoder;
-
+    List a;
     //注册
     public boolean registerUser(User user,String code)
     {
         if (code.equals((String)redisTemplate.opsForValue().get("SmsCode"+user.getPhone())))
         {
-            String userId = getId();
+            int userId = getId();
             user.setUserId(userId);
             user.setAdmin("0");
             String endcoderPassword = encoder.encode(user.getPassword());
@@ -50,20 +51,30 @@ public class RegisterService
     }
 
     //Id+1
-    public String getId()
+    public int getId()
     {
+        long a;
+        long b;
+        redisTemplate.delete("userId");
         boolean flag = redisTemplate.hasKey("userId");
         if (flag)
         {
-            String a = (String) redisTemplate.opsForValue().get("userId");
-            int b = Integer.parseInt(a)+1;
-            redisTemplate.opsForValue().set("userId",b);
+            System.out.println("存在");
+            a = redisTemplate.opsForList().size("userId");
+            b = a+1;
+            redisTemplate.opsForList().set("userId",a,b);
         }else{
-            redisTemplate.opsForValue().set("userId",1);
+            System.out.println("不存在");
+            a = 0;
+            b = 1;
+            redisTemplate.opsForList().set("userId",a,b);
+            System.out.println("hello");
         }
-        String userId = (String)redisTemplate.opsForValue().get("userId");
-        System.out.println(userId);
-        return userId;
+        List c = redisTemplate.opsForList().range("userId",a,a+1);
+        System.out.println(c.size());
+        int d = c.indexOf(0);
+        System.out.println(d);
+        return d;
     }
 
     //发送验证码

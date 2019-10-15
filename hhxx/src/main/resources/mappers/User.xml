@@ -8,8 +8,9 @@
         values (#{userId},#{fansId})
     </insert>
 
-    <select id="userBlogs" parameterType="com.xx.vo.UserBlog" resultType="">
-        select blogId from userBlogs where userId = #{userId}
+    <select id="userBlogs" parameterType="com.xx.vo.UserBlog" resultType="com.xx.vo.UserBlog">
+        select blogId from userBlogs
+        where userId = #{userId}
     </select>
 
     <insert id="userCollectionBlogs" parameterType="com.xx.vo.UserBlog">
@@ -17,12 +18,12 @@
         values (#{userId},#{blogId})
     </insert>
 
-    <select id="lookUserCollectionBlogs" parameterType="com.xx.vo.UserBlog" resultType="">
+    <select id="lookUserCollectionBlogs" parameterType="com.xx.vo.UserBlog" resultType="com.xx.vo.UserBlog">
         select blogId from userCollectionBlogs
         where userId = #{userId}
     </select>
 
-    <select id="userSum" parameterType="com.xx.vo.UserSum" resultType="">
+    <select id="userSum" parameterType="com.xx.vo.UserSum" resultType="com.xx.vo.UserSum">
         select fabulous,fans,blogs,visit from userSum
         where userId = #{userId}
     </select>

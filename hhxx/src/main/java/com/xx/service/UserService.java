@@ -7,6 +7,8 @@ import com.xx.vo.UserSum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService
 {
@@ -20,9 +22,9 @@ public class UserService
     }
 
     //查看用户博客
-    public void userBlogs(UserBlog userBlog)
+    public List<UserBlog> userBlogs(UserBlog userBlog)
     {
-        userDao.userBlogs(userBlog);
+        return userDao.userBlogs(userBlog);
     }
 
     //收藏博客
@@ -32,14 +34,14 @@ public class UserService
     }
 
     //查看用户收藏的博客
-    public void lookUserCollectionBlogs(UserBlog userBlog)
+    public List<UserBlog> lookUserCollectionBlogs(UserBlog userBlog)
     {
-        userDao.lookUserCollectionBlogs(userBlog);
+        return userDao.lookUserCollectionBlogs(userBlog);
     }
 
     //查看用户各种数
-    public void userSum(String userId)
+    public List<UserSum> userSum(String userId)
     {
-        userDao.userSum(userId);
+        return userDao.userSum(userId);
     }
 }
