@@ -33,7 +33,7 @@ public class RegisterService
     {
         if (code.equals((String)redisTemplate.opsForValue().get("SmsCode"+user.getPhone())))
         {
-            int userId = getId();
+            String userId = getId();
             user.setUserId(userId);
             user.setAdmin("0");
             String endcoderPassword = encoder.encode(user.getPassword());
@@ -44,6 +44,8 @@ public class RegisterService
             userInfo.setPhone(user.getPhone());
             userInfo.setRegisterDate(getTime());
             registerDao.registerUserInfo(userInfo);
+            redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"phone",userInfo.getPhone());
+            redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"registerDate",userInfo.getRegisterDate());
             return true;
         }else{
             return false;
@@ -51,30 +53,20 @@ public class RegisterService
     }
 
     //Id+1
-    public int getId()
+    public String getId()
     {
-        long a;
-        long b;
-        redisTemplate.delete("userId");
         boolean flag = redisTemplate.hasKey("userId");
         if (flag)
         {
-            System.out.println("存在");
-            a = redisTemplate.opsForList().size("userId");
-            b = a+1;
-            redisTemplate.opsForList().set("userId",a,b);
+            String a = (String) redisTemplate.opsForValue().get("userId");
+            int b = Integer.parseInt(a)+1;
+            redisTemplate.opsForValue().set("userId",b);
         }else{
-            System.out.println("不存在");
-            a = 0;
-            b = 1;
-            redisTemplate.opsForList().set("userId",a,b);
-            System.out.println("hello");
+            redisTemplate.opsForValue().set("userId",1);
         }
-        List c = redisTemplate.opsForList().range("userId",a,a+1);
-        System.out.println(c.size());
-        int d = c.indexOf(0);
-        System.out.println(d);
-        return d;
+        String userId =redisTemplate.opsForValue().get("userId").toString();
+        System.out.println(userId);
+        return userId;
     }
 
     //发送验证码

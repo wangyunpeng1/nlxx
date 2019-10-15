@@ -33,7 +33,7 @@ public class UserInfoService
     //取用户信息
     public Map getUserInfo(String userId)
     {
-        Map<Object,Object> map = redisTemplate.opsForHash().entries("hashValue");
+        Map<Object,Object> map = redisTemplate.opsForHash().entries("user_"+userId);
         System.out.println(map);
         return map;
     }

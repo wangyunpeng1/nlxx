@@ -2,7 +2,7 @@ package com.xx.vo;
 
 public class UserInfo
 {
-    private int userId;          //用户id
+    private String userId;          //用户id
     private String userName;        //用户名
     private String email;           //邮箱
     private String phone;           //手机号
@@ -11,12 +11,12 @@ public class UserInfo
     private String introduction;    //简介
     private String registerDate;    //注册时间
 
-    public int getUserId()
+    public String getUserId()
     {
         return userId;
     }
 
-    public void setUserId(int userId)
+    public void setUserId(String userId)
     {
         this.userId = userId;
     }

@@ -1,17 +1,17 @@
 package com.xx.vo;
 
 public class UserSum {
-    private int userId;
+    private String userId;
     private int fabulous;   //点赞数
     private int fans;       //关注数
     private int blogs;      //博客数
     private int Visit;      //浏览数
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

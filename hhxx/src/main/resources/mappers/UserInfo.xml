@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xx.dao.UserInfoDao">
     <update id="updateUserInfo" parameterType="com.xx.vo.UserInfo">
-        update user set userName = #{userName},
+        update userInfo set userName = #{userName},
         email = #{email},
         sex = #{sex},
         trade = #{trade},

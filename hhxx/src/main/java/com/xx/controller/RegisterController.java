@@ -38,7 +38,6 @@ public class RegisterController
                 return new Result(false,StatusCode.CodeError,"验证码错误或已过期");
             }
         }
-
     }
 
     /**
@@ -53,7 +52,7 @@ public class RegisterController
         if(flag)
         {
             return new Result(false, StatusCode.ExistPhoneError,"该手机号已注册");
-        }else {
+        }else{
             String code = registerService.getSmsCode(phone);
             registerService.sendCode(phone, code);
             return new Result(true, StatusCode.OK, "发送成功");

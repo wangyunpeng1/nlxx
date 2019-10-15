@@ -1,6 +1,5 @@
 package com.xx.controller;
 
-import com.sun.javafx.collections.MappingChange;
 import com.xx.service.UserInfoService;
 import com.xx.vo.Result;
 import com.xx.vo.StatusCode;
@@ -36,7 +35,7 @@ public class UserInfoController
      * @param userId
      * @return
      */
-    @PostMapping("getUserInfo")
+    @PostMapping("getUserInfo/{userId}")
     public Result getUserInfo(@PathVariable String userId)
     {
          Map<Object,Object> userInfos = userInfoService.getUserInfo(userId);
