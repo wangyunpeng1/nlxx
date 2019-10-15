@@ -4,10 +4,10 @@
 
 <mapper namespace="com.xx.dao.RegisterDao">
     <select id="isExistPhone" parameterType="com.xx.vo.User" resultType="java.lang.Boolean">
-        <![CDATA[select count(phone) from user ]]>
+        <![CDATA[select count(phone) from user where phone = #{phone}]]>
     </select>
     <select id="isExistAccount" parameterType="com.xx.vo.User" resultType="java.lang.Boolean">
-        <![CDATA[select count(account) from user ]]>
+        <![CDATA[select count(account) from user where account = #{account}]]>
     </select>
     <insert id="registerUser" parameterType="com.xx.vo.User">
         insert into user (userId,account,password,admin,phone)

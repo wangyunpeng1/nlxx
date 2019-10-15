@@ -58,7 +58,7 @@ public class RegisterService
         boolean flag = redisTemplate.hasKey("userId");
         if (flag)
         {
-            String a = (String) redisTemplate.opsForValue().get("userId");
+            String a =redisTemplate.opsForValue().get("userId").toString();
             int b = Integer.parseInt(a)+1;
             redisTemplate.opsForValue().set("userId",b);
         }else{

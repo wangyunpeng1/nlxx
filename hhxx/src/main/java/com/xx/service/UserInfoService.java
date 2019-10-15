@@ -22,9 +22,7 @@ public class UserInfoService
     {
         userInfoDao.updateUserInfo(userInfo);
         redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"userName",userInfo.getUserName());
-        redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"phone",userInfo.getPhone());
         redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"sex",userInfo.getSex());
-        redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"registerDate",userInfo.getRegisterDate());
         redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"email",userInfo.getEmail());
         redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"trade",userInfo.getTrade());
         redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"introduction",userInfo.getIntroduction());
