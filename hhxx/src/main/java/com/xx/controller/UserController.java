@@ -75,4 +75,12 @@ public class UserController
         List<UserSum> userSums = userService.userSum(userId);
         return new Result(true, StatusCode.OK,"查看各种数成功",userSums);
     }
+
+    @PostMapping("uploadBlog")
+    public Result uploadBlog(@RequestBody BlogInfo blogInfo)
+    {
+
+        return new Result(true, StatusCode.OK,"上传成功");
+
+    }
 }
