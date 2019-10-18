@@ -76,11 +76,44 @@ public class UserController
         return new Result(true, StatusCode.OK,"查看各种数成功",userSums);
     }
 
+    /**
+     * 上传博客
+     * @param blogInfo
+     * @return
+     */
     @PostMapping("uploadBlog")
     public Result uploadBlog(@RequestBody BlogInfo blogInfo)
     {
 
         return new Result(true, StatusCode.OK,"上传成功");
 
+    }
+
+    /**
+     * 点赞博客
+     * @param userBlog
+     * @return
+     */
+    @PostMapping("fabulousBlog")
+    public Result fabulousBlog(@RequestBody UserBlog userBlog)
+    {
+        boolean flag = userService.fabulousBlog(userBlog);
+        if (flag){
+            return new Result(true, StatusCode.OK,"点赞成功");
+        }else {
+            return new Result(true, StatusCode.OK,"取消成功");
+        }
+    }
+
+    /**
+     * 查询博客点赞数（测试上述功能）
+     * @param blogId
+     * @return
+     */
+    @PostMapping("selectFabulous/{blogId}")
+    public Result selectFabulous(@PathVariable String blogId)
+    {
+        long a = userService.selectBulous(blogId);
+        return new Result(true, StatusCode.OK,"查看成功",a);
     }
 }

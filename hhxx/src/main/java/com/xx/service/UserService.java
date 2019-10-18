@@ -5,6 +5,7 @@ import com.xx.vo.UserBlog;
 import com.xx.vo.UserFans;
 import com.xx.vo.UserSum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,8 @@ public class UserService
 {
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     //关注
     public void userFlow(UserFans userFans)
@@ -44,4 +47,28 @@ public class UserService
     {
         return userDao.userSum(userId);
     }
+
+    //用户点赞博客
+    public boolean fabulousBlog(UserBlog userBlog)
+    {
+        boolean bl;
+        boolean flag = redisTemplate.opsForSet().isMember("fabulous_"+userBlog.getBlogId(),"user_"+userBlog.getUserId());
+        if (flag)
+        {
+            redisTemplate.opsForSet().remove("fabulous_"+userBlog.getBlogId(),"user_"+userBlog.getUserId());
+            bl = false;
+        }else {
+            redisTemplate.opsForSet().add("fabulous_"+userBlog.getBlogId(),"user_"+userBlog.getUserId());
+            bl = true;
+        }
+        return bl;
+    }
+
+    //查看博客点赞（测试上述功能）
+    public long selectBulous(String blogId)
+    {
+        long a = redisTemplate.opsForSet().size("fabulous_"+blogId);
+        return a;
+    }
+
 }
