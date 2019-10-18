@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xx.dao.BlogDao">
+
+    <insert id="insertBlogSum" parameterType="com.xx.vo.BlogSum">
+        insert into blogSum (blogId,fabulos,comments,forwars,visit)
+        values #{blogId},#{fabulos},#{comments},#{forwars},#{visit}
+    </insert>
+
+    <insert id="insertBlogInfo" parameterType="com.xx.vo.BlogInfo">
+        insert into blogInfo (blogId,blogName,blogLabel,blogType,createDate)
+        values #{blogId},#{blogName},#{blogLabel},#{blogType},#{createDate}
+    </insert>
+
+    <update id="updateBlog" parameterType="com.xx.vo.BlogInfo">
+        update blogInfo set blogName = #{blogName},blogLabel = #{blogLabel},blogType = #{blogType}
+        where blogId = #{blogId}
+    </update>
+
+</mapper>

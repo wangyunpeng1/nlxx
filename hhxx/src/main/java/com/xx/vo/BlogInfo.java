@@ -1,10 +1,12 @@
 package com.xx.vo;
 
-public class BlogInfo {
+public class BlogInfo
+{
     private String blogId;
     private String blogName;
     private String blogLabel;
     private String blogType;
+    private String createDate;
 
     public String getBlogId() {
         return blogId;
@@ -36,5 +38,13 @@ public class BlogInfo {
 
     public void setBlogType(String blogType) {
         this.blogType = blogType;
+    }
+
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 }

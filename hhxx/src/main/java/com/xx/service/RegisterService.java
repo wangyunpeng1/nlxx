@@ -52,7 +52,7 @@ public class RegisterService
         }
     }
 
-    //Id+1
+    //获取userId
     public String getId()
     {
         boolean flag = redisTemplate.hasKey("userId");

@@ -1,6 +1,7 @@
 package com.xx.vo;
 
-public class UserFans {
+public class UserFans
+{
     private String userId;
     private String fansId;
 

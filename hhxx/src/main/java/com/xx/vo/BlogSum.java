@@ -1,16 +1,13 @@
 package com.xx.vo;
 
-public class Blog
+public class BlogSum
 {
     private String blogId;
     private int fabulos;
     private int comments;
     private int forwars;
     private int visit;
-    private String blogName;
-    private String blogLabel;
-    private String blogType;
-    private String createDate;
+
 
     public String getBlogId() {
         return blogId;
@@ -50,37 +47,5 @@ public class Blog
 
     public void setVisit(int visit) {
         this.visit = visit;
-    }
-
-    public String getBlogName() {
-        return blogName;
-    }
-
-    public void setBlogName(String blogName) {
-        this.blogName = blogName;
-    }
-
-    public String getBlogLabel() {
-        return blogLabel;
-    }
-
-    public void setBlogLabel(String blogLabel) {
-        this.blogLabel = blogLabel;
-    }
-
-    public String getBlogType() {
-        return blogType;
-    }
-
-    public void setBlogType(String blogType) {
-        this.blogType = blogType;
-    }
-
-    public String getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
     }
 }

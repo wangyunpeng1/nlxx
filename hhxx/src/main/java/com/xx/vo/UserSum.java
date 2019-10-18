@@ -1,6 +1,7 @@
 package com.xx.vo;
 
-public class UserSum {
+public class UserSum
+{
     private String userId;
     private int fabulous;   //点赞数
     private int fans;       //关注数

@@ -1,5 +1,6 @@
 package com.xx.controller;
 
+import com.xx.service.BlogService;
 import com.xx.service.UserService;
 import com.xx.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ public class UserController
 {
     @Autowired
     private UserService userService;
+    @Autowired
+    private BlogService blogService;
 
     /**
      * 关注用户
@@ -78,15 +81,22 @@ public class UserController
 
     /**
      * 上传博客
-     * @param blogInfo
+     * @param blog
      * @return
      */
     @PostMapping("uploadBlog")
-    public Result uploadBlog(@RequestBody BlogInfo blogInfo)
+    public Result uploadBlog(@RequestBody Blog blog)
     {
-
+        blogService.uploadBlog(blog);
         return new Result(true, StatusCode.OK,"上传成功");
 
+    }
+
+    @PostMapping("updateBlog")
+    public Result updateBlog(@RequestBody Blog blog)
+    {
+        blogService.updateBlog(blog);
+        return new Result(true, StatusCode.OK,"修改成功");
     }
 
     /**

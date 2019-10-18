@@ -32,4 +32,5 @@ public class LoginService
         flag = code.equals(redisTemplate.opsForValue().get("SmsCode"+phone));
         return flag;
     }
+
 }
