@@ -27,8 +27,13 @@ public class UserController
     @PostMapping("flow")
     public Result userFlow(@RequestBody UserFans userFans)
     {
-        userService.userFlow(userFans);
-        return new Result(true, StatusCode.OK,"关注成功");
+        boolean flag = userService.userFlow(userFans);
+        if (flag)
+        {
+            return new Result(true, StatusCode.OK,"关注成功");
+        }else {
+            return new Result(true, StatusCode.OK,"取消关注成功");
+        }
     }
 
     /**
@@ -53,6 +58,13 @@ public class UserController
     {
         userService.userCollectionBlogs(userBlog);
         return new Result(true, StatusCode.OK,"收藏成功");
+    }
+
+    @PostMapping
+    public Result userCancelCollectionBlogs(@RequestBody UserBlog userBlog)
+    {
+        userService.userCancelCollectionBlogs(userBlog);
+        return new Result(true, StatusCode.OK,"取消成功");
     }
 
     /**
@@ -92,6 +104,11 @@ public class UserController
 
     }
 
+    /**
+     * 修改博客
+     * @param blog
+     * @return
+     */
     @PostMapping("updateBlog")
     public Result updateBlog(@RequestBody Blog blog)
     {

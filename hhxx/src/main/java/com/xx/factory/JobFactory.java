@@ -13,7 +13,8 @@ public class JobFactory extends AdaptableJobFactory
     private AutowireCapableBeanFactory autowireCapableBeanFactory;
 
     @Override
-    protected Object createJobInstance(TriggerFiredBundle bundle) throws Exception {
+    protected Object createJobInstance(TriggerFiredBundle bundle) throws Exception
+    {
         Object obj = super.createJobInstance(bundle);
         this.autowireCapableBeanFactory.autowireBean(obj);
         return obj;

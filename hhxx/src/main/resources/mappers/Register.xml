@@ -17,4 +17,8 @@
         insert into userInfo (userId,phone,registerDate)
         values (#{userId},#{phone},#{registerDate})
     </insert>
+    <insert id="registerUserSum" parameterType="com.xx.vo.UserSum">
+        insert into userSum (userId,fabulous,fans,blogs,visit)
+        values (#{userId},#{fabulous},#{fans},#{blogs},#{visit})
+    </insert>
 </mapper>

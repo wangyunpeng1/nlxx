@@ -29,7 +29,7 @@ public class BlogService
         blogSum.setBlogId(blog.getBlogId());
         blogSum.setComments(0);
         blogSum.setFabulos(0);
-        blogSum.setForwars(0);
+        blogSum.setCollections(0);
         blogSum.setVisit(0);
         blogDao.insertBlogSum(blogSum);
         //blogInfo表
@@ -75,5 +75,4 @@ public class BlogService
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
         return dateFormat.format(date);
     }
-
 }

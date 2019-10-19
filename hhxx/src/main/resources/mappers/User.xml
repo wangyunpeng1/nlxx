@@ -18,6 +18,11 @@
         values (#{userId},#{blogId})
     </insert>
 
+    <delete id="userCancelCollectionBlogs" parameterType="com.xx.vo.UserBlog">
+        delete blogId from userCollectionBlogs
+        where userId = #{userId}
+    </delete>
+
     <select id="lookUserCollectionBlogs" parameterType="com.xx.vo.UserBlog" resultType="com.xx.vo.UserBlog">
         select blogId from userCollectionBlogs
         where userId = #{userId}
@@ -27,5 +32,19 @@
         select fabulous,fans,blogs,visit from userSum
         where userId = #{userId}
     </select>
+
+    <select id="userId" resultType="java.lang.String">
+        select userId from user
+    </select>
+
+    <select id="blogId" parameterType="string" resultType="java.lang.String">
+        select blogId from userBlogs where userId = #{userId}
+    </select>
+
+    <update id="updateUserSum" parameterType="com.xx.vo.UserSum">
+        update userSum set fabulous = #{fabulous},fans = #{fans}
+--         ,blogs = #{blogs},visit = #{visit}
+        where userId = #{userId}
+    </update>
 
 </mapper>

@@ -6,7 +6,15 @@ public class UserSum
     private int fabulous;   //点赞数
     private int fans;       //关注数
     private int blogs;      //博客数
-    private int Visit;      //浏览数
+    private int visit;      //浏览数
+
+    public int getVisit() {
+        return visit;
+    }
+
+    public void setVisit(int visit) {
+        this.visit = visit;
+    }
 
     public String getUserId() {
         return userId;
@@ -40,11 +48,5 @@ public class UserSum
         this.blogs = blogs;
     }
 
-    public int getVisit() {
-        return Visit;
-    }
 
-    public void setVisit(int visit) {
-        Visit = visit;
-    }
 }

@@ -3,6 +3,7 @@ package com.xx.service;
 import com.xx.dao.RegisterDao;
 import com.xx.vo.User;
 import com.xx.vo.UserInfo;
+import com.xx.vo.UserSum;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -27,11 +28,10 @@ public class RegisterService
     private RabbitTemplate rabbitTemplate;
     @Autowired
     private BCryptPasswordEncoder encoder;
-    List a;
     //注册
     public boolean registerUser(User user,String code)
     {
-        if (code.equals((String)redisTemplate.opsForValue().get("SmsCode"+user.getPhone())))
+        if (code.equals(redisTemplate.opsForValue().get("SmsCode"+user.getPhone())))
         {
             String userId = getId();
             user.setUserId(userId);
@@ -39,11 +39,21 @@ public class RegisterService
             String endcoderPassword = encoder.encode(user.getPassword());
             user.setPassword(endcoderPassword);
             registerDao.registerUser(user);
+            //userInfo表
             UserInfo userInfo = new UserInfo();
             userInfo.setUserId(userId);
             userInfo.setPhone(user.getPhone());
             userInfo.setRegisterDate(getTime());
             registerDao.registerUserInfo(userInfo);
+            //userSum表
+            UserSum userSum = new UserSum();
+            userSum.setUserId(userId);
+            userSum.setBlogs(0);
+            userSum.setFabulous(0);
+            userSum.setFans(0);
+            userSum.setVisit(0);
+            registerDao.registerUserSum(userSum);
+
             redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"phone",userInfo.getPhone());
             redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"registerDate",userInfo.getRegisterDate());
             return true;
@@ -126,5 +136,4 @@ public class RegisterService
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
         return dateFormat.format(date);
     }
-
 }

@@ -31,7 +31,6 @@ public class LoginController
         }else{
             return new Result(false,StatusCode.AccountError,"账号或密码错误");
         }
-
     }
 
     /**

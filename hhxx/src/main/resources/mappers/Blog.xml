@@ -18,4 +18,23 @@
         where blogId = #{blogId}
     </update>
 
+    <update id="addFabulous" parameterType="com.xx.vo.Blog">
+        update blogSum set fabulous = (fabulous + 1)
+        where blogId = #{blogId}
+    </update>
+
+    <update id="reduceFabulous" parameterType="com.xx.vo.Blog">
+        update blogSum set fabulous = (fabulous - 1)
+        where blogId = #{blogId}
+    </update>
+
+    <update id="addCollections" parameterType="com.xx.vo.Blog">
+        update blogSum set collections = (collections + 1)
+        where collections = #{collections}
+    </update>
+
+    <update id="reduceCollections" parameterType="com.xx.vo.Blog">
+        update blogSum set collections = (collections - 1)
+        where collections = #{collections}
+    </update>
 </mapper>

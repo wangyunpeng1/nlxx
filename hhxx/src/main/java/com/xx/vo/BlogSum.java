@@ -5,7 +5,7 @@ public class BlogSum
     private String blogId;
     private int fabulos;
     private int comments;
-    private int forwars;
+    private int collections;
     private int visit;
 
 
@@ -33,12 +33,12 @@ public class BlogSum
         this.comments = comments;
     }
 
-    public int getForwars() {
-        return forwars;
+    public int getCollections() {
+        return collections;
     }
 
-    public void setForwars(int forwars) {
-        this.forwars = forwars;
+    public void setCollections(int collections) {
+        this.collections = collections;
     }
 
     public int getVisit() {
