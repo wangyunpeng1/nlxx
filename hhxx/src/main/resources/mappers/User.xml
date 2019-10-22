@@ -43,7 +43,6 @@
 
     <update id="updateUserSum" parameterType="com.xx.vo.UserSum">
         update userSum set fabulous = #{fabulous},fans = #{fans}
---         ,blogs = #{blogs},visit = #{visit}
         where userId = #{userId}
     </update>
 

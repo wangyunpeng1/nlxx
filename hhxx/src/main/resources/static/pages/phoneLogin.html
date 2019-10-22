@@ -4,6 +4,25 @@
     .wyp-form-label{float:left;display:block;padding:9px 1px;width:80px;font-weight:400;line-height:20px;text-align:center}
     .wyp-input-block{margin-left:90px;min-height:36px}
     .wyp-input{display:block;width:60%;padding-left:10px}
+    .wyp-text{
+        height: 46px;
+        outline: none;
+        display: inline-block;
+        font: 14px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei";
+        margin-left: 50px;
+        border: none;
+        background: none;
+        line-height: 46px;
+    }
+    .wyp_input_outer{
+        width: 200px;
+        height: 46px;
+        padding: 0 5px;
+        margin-bottom: 30px;
+        border-radius: 50px;
+        position: relative;
+        border: rgba(255,255,255,0.2) 2px solid !important;
+    }
 </style>
 <head>
     <base id="base" href="${base}">
@@ -23,31 +42,36 @@
         <div id="large-header" class="large-header">
             <canvas id="demo-canvas"></canvas>
             <div class="logo_box">
-                <h3>用户登陆</h3>
+                <h3>手机号登陆</h3>
                 <!--<form action="#" name="f" method="post">-->
-                    <div class="input_outer">
-                        <span class="u_user"></span>
-                        <input name="userName" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
-                    </div>
-                    <div class="input_outer">
+                <div class="input_outer">
+                    <span class="u_user"></span>
+                    <input name="phone" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入手机号">
+                </div>
+                <div class="wyp_input_outer" style="display: flex;flex-direction: row;align-items: center;">
+                    <div>
                         <span class="us_uer"></span>
-                        <input name="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+                        <input maxlength="6" name="code" class="wyp-text" style="color: #FFFFFF !important;" value="" placeholder="请输入验证码">
                     </div>
-                    <div class="mb2 "><a id = "sub" lay-filter="sub" class="act-but submit" href="javascript:;" style="color: #FFFFFF">登录</a></div>
+                    <button class="layui-btn layui-btn-radius" style="width: 105px;height: 42px;color: #ffffff;" type="button" id="smsCode">发送验证码</button>
 
-                <a href="phoneLogin.html" class="font-set" style="color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;手机号登陆</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a id = "register" lay-filter="sub" class="font-set"  href="javascript:;" style="color: #ffffff">立即注册</a>
+                </div>
+
+                <div class="mb2"><a id = "sub" lay-filter="sub" class="act-but submit" href="javascript:;" style="color: #FFFFFF">登录</a></div>
+
+                <a href="login.html" class="font-set" style="color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;账号密码登陆</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a id = "register" lay-filter="sub" class="font-set"  href="javascript:;" style="color: #ffffff">立即注册</a>
                 <!--</form>-->
             </div>
         </div>
     </div>
 </div><!-- /container -->
+</body>
 <script src="../login/js/TweenLite.min.js"></script>
 <script src="../login/js/EasePack.min.js"></script>
 <script src="../login/js/rAF.js"></script>
 <script src="../login/js/demo-1.js"></script>
-</body>
 <script>
     //加载弹出层组件
     layui.use('layer',function(){
@@ -68,17 +92,15 @@
         $("#register").on("click",function(){
             register();
         })
+        //发送验证码
+        $("#smsCode").on("click",function(){
+            smscode();
+        })
         function login(){
-            var userName = $(" input[ name='userName' ] ").val();
-            var password = $(" input[ name='password' ] ").val();
-            if (userName == '' || userName == null) {
-                alert("用户账号不能为空");
-            } else if (password == '' || password == null) {
-                alert("用户密码不能为空");
-            }else{
+            var phone = $(" input[ name='phone' ] ").val();
+            var code = $(" input[ name='code' ] ").val();
             $.ajax({
-                url:"login",
-                data:"{\"account\":\"" + userName + "\",\"password\":\""+ password+"\"}",
+                url:"phoneLogin/"+phone+"/"+code,
                 type:"post",
                 contentType: "application/json",
                 success:function(data){
@@ -100,6 +122,46 @@
                     });
                 }
             })
+        }
+        var InterValObj; //timer变量，控制时间
+        var count = 60; //间隔函数，1秒执行
+        var curCount=60;//当前剩余秒数
+        function smscode() {
+            var serialNumber = $(" input[ name='phone' ] ").val();
+            var checkRole = /^((13[0-9])|(14[5,7,9])|(15([0-3]|[5-9]))|(166)|(17[0,1,3,5,6,7,8])|(18[0-9])|(19[8|9]))\d{8}$/;
+            if (serialNumber == '' || serialNumber == null) {
+                alert("手机号不能为空");
+            } else if (!checkRole.test(serialNumber)) {
+                alert("请输入正确的手机号");
+            }else {
+                $.ajax({
+                    url: "loginSendCode/"+serialNumber,
+                    type: "post",
+                    contentType: "application/json",
+                    success: function (data) {
+                        if (data.flag == true) {
+                            layer.msg(data.message, {
+                                icon: 1
+                            });
+                            $("#smsCode").attr("disabled",true);
+                            $("#smsCode").text("60");
+                            InterValObj = window.setInterval(SetRemainTime, 1000);
+                        } else {
+                            layer.msg(data.message, {
+                                icon: 2
+                            });
+                        }
+                    },
+                    error: function (data) {
+                        var msg = data.responseText;
+                        var response = JSON.parse(msg);
+                        layer.msg(msg, {
+                            anim: 6,
+                            icon: 2,
+                            time: 5000
+                        });
+                    }
+                })
             }
         }
         function register(){
@@ -134,21 +196,21 @@
                     var code = $('#code').val();
                     var pass = $('#pass').val();
                     var checkRole = /^((13[0-9])|(14[5,7,9])|(15([0-3]|[5-9]))|(166)|(17[0,1,3,5,6,7,8])|(18[0-9])|(19[8|9]))\d{8}$/;
-                   if (account == '' || account == null) {
-                       alert("用户账号不能为空");
+                    if (account == '' || account == null) {
+                        alert("用户账号不能为空");
                     } else if (password == '' || password == null) {
-                       alert("用户密码不能为空");
+                        alert("用户密码不能为空");
                     } else if (pass == '' || pass == null){
-                       alert("请确定密码")
-                   } else if (pass != password) {
-                       alert("两次输入的密码不一致")
-                   } else if (serialNumber == '' || serialNumber == null) {
-                       alert("手机号不能为空");
+                        alert("请确定密码")
+                    } else if (pass != password) {
+                        alert("两次输入的密码不一致")
+                    } else if (serialNumber == '' || serialNumber == null) {
+                        alert("手机号不能为空");
                     } else if (!checkRole.test(serialNumber)) {
-                       alert("请输入正确的手机号");
+                        alert("请输入正确的手机号");
                     } else {
                         $.ajax({
-                            url: "/register?code="+ code,
+                            url: "register/"+code,
                             type: "POST",
                             contentType: "application/json",
                             data: "{\"account\":\"" + account + "\",\"password\":\"" + password + "\",\"serialNumber\":\"" + serialNumber + "\"}",
@@ -209,7 +271,7 @@
                     $("#smsCode").text("60");
                     InterValObj = window.setInterval(SetRemainTime, 1000);
                     $.ajax({
-                        url: "registerSendCode/" + serialNumber,
+                        url: "registerSendCode/"+serialNumber,
                         type: "post",
                         dataType: "json",
                         success: function (data) {
@@ -243,6 +305,17 @@
                     curCount=curCount-1;
                     $("#smsCode").text(curCount);
                 }
+            }
+        }
+        function SetRemainTime() {
+            if (curCount == 0) {
+                window.clearInterval(InterValObj);//停止计时器
+                $("#smsCode").removeAttr("disabled");//启用按钮
+                $("#smsCode").text("重新发送");
+            }
+            else {
+                curCount=curCount-1;
+                $("#smsCode").text(curCount);
             }
         }
     })

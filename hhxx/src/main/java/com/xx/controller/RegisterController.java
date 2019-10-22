@@ -4,14 +4,12 @@ import com.xx.service.RegisterService;
 import com.xx.vo.Result;
 import com.xx.vo.StatusCode;
 import com.xx.vo.User;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
 @RestController
+@RequestMapping("pages")
 public class RegisterController
 {
     @Resource
@@ -41,12 +39,12 @@ public class RegisterController
     }
 
     /**
-     * 发送验证码
+     * 发送验证码(注册)
      * @param phone
      * @return
      */
-    @PostMapping("sendCode/{phone}")
-    public Result sendCode(@PathVariable String phone)
+    @PostMapping("registerSendCode/{phone}")
+    public Result registerSendCode(@PathVariable("phone") String phone)
     {
         boolean flag = registerService.isExistPhone(phone);
         if(flag)

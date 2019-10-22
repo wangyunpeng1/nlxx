@@ -53,14 +53,19 @@ public class UserController
      * @param userBlog
      * @return
      */
-    @PostMapping
+    @PostMapping("userCollectionBlogs")
     public Result userCollectionBlogs(@RequestBody UserBlog userBlog)
     {
         userService.userCollectionBlogs(userBlog);
         return new Result(true, StatusCode.OK,"收藏成功");
     }
 
-    @PostMapping
+    /**
+     * 用户取消收藏博客
+     * @param userBlog
+     * @return
+     */
+    @PostMapping("userCancelCollectionBlogs")
     public Result userCancelCollectionBlogs(@RequestBody UserBlog userBlog)
     {
         userService.userCancelCollectionBlogs(userBlog);
