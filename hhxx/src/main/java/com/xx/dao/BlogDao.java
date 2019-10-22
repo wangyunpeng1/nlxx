@@ -1,10 +1,13 @@
 package com.xx.dao;
 
+import com.xx.vo.BlogFabulous;
 import com.xx.vo.BlogInfo;
 import com.xx.vo.BlogSum;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Mapper
 @Component
@@ -24,4 +27,6 @@ public interface BlogDao
     public void addCollections(@Param("blogId") String blogId);
     //减少博客收藏
     public void reduceCollections(@Param("blogId") String blogId);
+    //查赞排行前10的赞
+    public List<BlogFabulous> topTenFabulous();
 }

@@ -25,7 +25,7 @@ public class QuartzRedisConfig
     {
         CronTriggerFactoryBean factory = new CronTriggerFactoryBean();
         factory.setJobDetail(jobRedis.getObject());
-        factory.setCronExpression("0 0 0/1 * * ?"); //10s执行一次
+        factory.setCronExpression("0 0 0/1 * * ?"); //1小时执行一次
         return factory;
     }
     @Bean

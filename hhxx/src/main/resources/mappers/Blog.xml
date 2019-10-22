@@ -37,4 +37,8 @@
         update blogSum set collections = (collections - 1)
         where collections = #{collections}
     </update>
+
+    <select id="topTenFabulous" resultType="com.xx.vo.BlogFabulous">
+        select top 10 blogId,fabulous from blog order by fabulous desc
+    </select>
 </mapper>
