@@ -14,12 +14,19 @@ import java.util.List;
 @Component
 public interface BlogDao
 {
+
     //插入博客各种总数
     public void insertBlogSum(BlogSum blogSum);
     //插入博客信息
     public void insertBlogInfo(BlogInfo blogInfo);
     //更改博客信息
     public void updateBlog(BlogInfo blogInfo);
+    //博客浏览量+1
+    public void addVisit(String blogId);
+    //查看博客总
+    public BlogSum selectBlogSum(String blogId);
+    //查看博客信息
+    public BlogInfo selectBlogInfo(String blogId);
     //增加博客赞
     public void addFabulous(@Param("blogId") String blogId);
     //减少博客赞

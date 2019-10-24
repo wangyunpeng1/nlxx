@@ -75,4 +75,24 @@ public class BlogService
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
         return dateFormat.format(date);
     }
+
+    //查看博客
+    public Blog lookBlog(String blogId)
+    {
+        BlogSum blogSum = blogDao.selectBlogSum(blogId);
+        BlogInfo blogInfo = blogDao.selectBlogInfo(blogId);
+        blogDao.addVisit(blogId);
+        Blog blog = new Blog();
+        blog.setBlogId(blogId);
+        blog.setVisit(blogSum.getVisit());
+        blog.setFabulos(blogSum.getFabulos());
+        blog.setComments(blogSum.getComments());
+        blog.setCollections(blogSum.getCollections());
+        blog.setBlogName(blogInfo.getBlogName());
+        blog.setBlogLabel(blogInfo.getBlogLabel());
+        blog.setBlogType(blogInfo.getBlogType());
+        blog.setCreateDate(blogInfo.getCreateDate());
+
+        return blog;
+    }
 }

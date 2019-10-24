@@ -18,7 +18,22 @@
         where blogId = #{blogId}
     </update>
 
-    <update id="addFabulous" parameterType="com.xx.vo.Blog">
+    <update id="addVisit" parameterType="com.xx.vo.BlogVisit">
+        update blogSum set visit = (visit + 1)
+        where blogId = #{blogId}
+    </update>
+
+    <select id="selectBlogSum" parameterType="com.xx.vo.BlogSum" resultType="com.xx.vo.BlogSum">
+        select * from blogSum
+        where blogId = #{blogId}
+    </select>
+
+    <select id="selectBlogInfo" parameterType="com.xx.vo.BlogInfo" resultType="com.xx.vo.BlogInfo">
+        select * from blogInfo
+        where blogId = #{blogId}
+    </select>
+
+    <update id="addFabulous" parameterType="com.xx.vo.BlogFabulous">
         update blogSum set fabulous = (fabulous + 1)
         where blogId = #{blogId}
     </update>
@@ -39,10 +54,10 @@
     </update>
 
     <select id="topTenFabulous" resultType="com.xx.vo.BlogFabulous">
-        select top 10 blogId,fabulous from blog order by fabulous desc
+        select top 10 blogId,fabulous from blogSum order by fabulous desc
     </select>
 
     <select id="topTenVisit" resultType="com.xx.vo.BlogVisit">
-        select top 10 blogId,visit from blog order by visit desc
+        select top 10 blogId,visit from blogSum order by visit desc
     </select>
 </mapper>
