@@ -10,7 +10,7 @@ public class htmlConfig implements WebMvcConfigurer
     @Override
     public void addViewControllers(ViewControllerRegistry registry)
     {
-        registry.addViewController("/").setViewName("forward:/pages/phoneLogin.html");
+        registry.addViewController("/").setViewName("forward:/pages/Login.html");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 }

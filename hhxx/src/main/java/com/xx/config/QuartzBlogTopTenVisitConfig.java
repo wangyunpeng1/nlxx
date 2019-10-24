@@ -1,6 +1,6 @@
 package com.xx.config;
 
-import com.xx.Job.BlogTopTenFabulousJob;
+import com.xx.Job.BlogTopTenVisitJob;
 import com.xx.factory.JobFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -10,21 +10,21 @@ import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
 /**
- *赞数前10的微博，每天12点更新
+ *统计浏览量前10的博客，每天12点更新
  */
 @Configuration
-public class QuartzBlogTopTenFabulousConfig
+public class QuartzBlogTopTenVisitConfig
 {
-    @Bean(name = "JobBlogTopTenFabulous")
-    public JobDetailFactoryBean jobBlogTopTenFabulous()
+    @Bean(name = "JobBlogTopTenVisit")
+    public JobDetailFactoryBean jobBlogTopTenVisit()
     {
         JobDetailFactoryBean detailFactory = new JobDetailFactoryBean();
-        detailFactory.setJobClass(BlogTopTenFabulousJob.class);
+        detailFactory.setJobClass(BlogTopTenVisitJob.class);
         return detailFactory;
     }
 
-    @Bean(name = "TriggerBlogTopTenFabulous")
-    public CronTriggerFactoryBean cronTriggerBlogTopTenFabulous(@Qualifier("JobBlogTopTenFabulous") JobDetailFactoryBean jobDetailFactoryBean)
+    @Bean(name = "TriggerBlogTopTenVisit")
+    public CronTriggerFactoryBean cronTriggerBlogTopTenVisit(@Qualifier("JobBlogTopTenVisit") JobDetailFactoryBean jobDetailFactoryBean)
     {
         CronTriggerFactoryBean factoryBean = new CronTriggerFactoryBean();
         factoryBean.setJobDetail(jobDetailFactoryBean.getObject());
@@ -33,11 +33,11 @@ public class QuartzBlogTopTenFabulousConfig
     }
 
     @Bean
-    public SchedulerFactoryBean schedulerBlogTopTenFabulous(@Qualifier("TriggerBlogTopTenFabulous")CronTriggerFactoryBean cronTriggerBlogTopTenFabulous, JobFactory jobFactory)
+    public SchedulerFactoryBean schedulerBlogTopTenVisit(@Qualifier("TriggerBlogTopTenVisit")CronTriggerFactoryBean cronTriggerBlogTopTenVisit, JobFactory jobFactory)
     {
         SchedulerFactoryBean factory = new SchedulerFactoryBean();
         //关联trigger
-        factory.setTriggers(cronTriggerBlogTopTenFabulous.getObject());
+        factory.setTriggers(cronTriggerBlogTopTenVisit.getObject());
         factory.setJobFactory(jobFactory);
         return factory;
     }
