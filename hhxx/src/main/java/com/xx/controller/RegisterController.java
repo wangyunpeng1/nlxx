@@ -23,6 +23,7 @@ public class RegisterController
     @PostMapping("register/{code}")
     public Result registerUser(@RequestBody User user,@PathVariable String code)
     {
+        System.out.println("注册账户:"+code);
         boolean flag = registerService.isExistAccount(user.getAccount());
         if (flag)
         {

@@ -5,4 +5,10 @@
     <select id="findPassword" parameterType="com.xx.vo.Login" resultType="java.lang.String">
         select password from user where account = #{account}
     </select>
+
+
+    <select id="findUserId" parameterType="string" resultType="java.lang.String">
+        select userId from user where account = #{account}
+    </select>
+
 </mapper>

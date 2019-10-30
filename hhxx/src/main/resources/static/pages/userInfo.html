@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>博客首页</title>
+    <link rel="stylesheet" type="text/css" href="../login/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../login/css/demo.css" />
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="../login/css/component.css" />
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+    <script type="text/javascript" src="../jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <style>
+        .wyp-label {
+            float: left;
+            display: block;
+            padding: 9px 15px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: right;
+        }
+        .wyp-form-label{float:left;display:block;padding:9px 1px;width:80px;font-weight:400;line-height:20px;text-align:center}
+        .wyp-input-block{margin-left:90px;min-height:36px}
+    </style>
+
+</head>
+
+
+<body>
+<ul class="layui-nav layui-bg-green">
+    <li class="layui-nav-item"><a href="blogindex.html">首页</a></li>
+    <li class="layui-nav-item "><a href="blogCommon.html">博客广场</a></li>
+    <li class="layui-nav-item"><a href="">生活区</a></li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">解决方案</a>
+        <dl class="layui-nav-child">
+            <dd><a href="">移动模块</a></dd>
+            <dd><a href="">后台模版</a></dd>
+            <dd><a href="">电商平台</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item"><a href="discuss.html">讨论区</a></li>
+    <li class="layui-nav-item" style="float:right;" >
+        <a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"><p id="nameOne"></a>
+        <dl class="layui-nav-child">
+            <dd><a href="userInfo.html">个人中心</a></dd>
+            <dd><a href="javascript:;">博客管理</a></dd>
+            <dd><a href="javascript:;">我的收藏</a></dd>
+            <dd><a href="javascript:;">我的关注</a></dd>
+            <dd><a href="login.html">注销</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item" style="float:right;"><a href="uploadBlog.html">写博客</a></li>
+    <li class="layui-nav-item" style="float:right;" id="show"></li>
+</ul>
+
+<div class="layui-row">
+    <div class="layui-col-xs4">
+        <div class="grid-demo grid-demo-bg1">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend style="font-size:40px">个人信息</legend>
+            </fieldset>
+            <div class="layui-row">
+                <div class="layui-col-xs2">
+                <dl style="text-align: center;">
+                    <dt style="font-size:20px">博客数</dt>
+                    <dd>0</dd>
+                </dl>
+                </div>
+                <div class="layui-col-xs2">
+                <dl style="text-align: center;">
+                    <dt style="font-size:20px">粉丝数</dt>
+                    <dd>0</dd>
+                </dl>
+                </div>
+                <div class="layui-col-xs2">
+                <dl style="text-align: center;">
+                    <dt style="font-size:20px">关注数</dt>
+                    <dd>0</dd>
+                </dl>
+                </div>
+                <div class="layui-col-xs2" >
+                <dl style="text-align: center;">
+                    <dt style="font-size:20px">收藏数</dt>
+                    <dd>0</dd>
+                </dl>
+                </div>
+                <div class="layui-col-xs2">
+                <dl style="text-align: center;">
+                    <dt style="font-size:20px">获赞数</dt>
+                    <dd>0</dd>
+                </dl>
+                </div>
+                <div class="layui-col-xs2">
+                <dl style="text-align: center;">
+                    <dt style="font-size:20px">访问量</dt>
+                    <dd>0</dd>
+                </dl>
+                </div>
+
+            </div>
+            <div class="layui-form-item">
+            </div>
+            <br>
+            <div class="layui-form-item" style="margin-left: 50px">
+                <label class="wyp-label" style="font-size:20px">用户名:</label>
+                <label id="userName" class="wyp-label" style="font-size:20px"></label>
+            </div>
+            <div class="layui-form-item" style="margin-left: 50px">
+                <label class="wyp-label" style="font-size:20px">手机号:</label>
+                <label id="phone" class="wyp-label" style="font-size:20px"></label>
+            </div>
+            <div class="layui-form-item" style="margin-left: 50px">
+                <label class="wyp-label" style="font-size:20px">邮&nbsp;&nbsp;&nbsp;&nbsp;箱:</label>
+                <label id="email" class="wyp-label" style="font-size:20px"></label>
+            </div>
+            <div class="layui-form-item" style="margin-left: 50px">
+                <label class="wyp-label" style="font-size:20px">性&nbsp;&nbsp;&nbsp;&nbsp;别:</label>
+                <label id="sex" class="wyp-label" style="font-size:20px"></label>
+            </div>
+            <div class="layui-form-item" style="margin-left: 50px">
+                <label class="wyp-label" style="font-size:20px">职&nbsp;&nbsp;&nbsp;&nbsp;业:</label>
+                <label id="trade" class="wyp-label" style="font-size:20px"></label>
+            </div>
+            <div class="layui-form-item" style="margin-left: 50px">
+                <label class="wyp-label" style="font-size:20px">简&nbsp;&nbsp;&nbsp;&nbsp;介:</label>
+                <label id="introduction" class="wyp-label" style="font-size:20px"></label>
+            </div>
+            <div class="layui-form-item" style="margin-left: 50px">
+                <label class="wyp-label" style="font-size:20px">注册时间:</label>
+                <label id="creatDate" class="wyp-label" style="font-size:20px"></label>
+            </div>
+            <div class="layui-form-item" style="margin-left: 350px">
+                <button id="updateInfo" class="layui-btn layui-btn-primary layui-btn-radius" type="button">修改个人资料</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="layui-col-xs8">
+        <div class="grid-demo">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px; border-color:#5FB878">
+                <legend style="font-size:40px">我的博客</legend>
+            </fieldset>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    layui.use(['element','layer'] , function(){
+        var ab = layui.jquery
+            ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+        var layer = layui.layer;
+
+        window.onload = function(){
+            func1();
+        };
+        function func1() {
+            $.ajax({
+                url: "getUserInfo",
+                type: "GET",
+                contentType: "application/json",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        $("#nameOne").text(data.data.get("userName"));
+                        $("#userName").text(data.data.get("userName"));
+                        $("#phone").text(data.data.get("phone"));
+                        $("#email").text(data.data.get("email"));
+                        $("#sex").text(data.data.get("sex"));
+                        $("#trade").text(data.data.get("trade"));
+                        $("#introduction").text(data.data.get("introduction"));
+                        $("#creatDate").text(data.data.get("registerDate"));
+                    }
+                }
+            });
+        }
+
+        $("#updateInfo").on("click",function(){
+            update();
+        });
+        function update() {
+            var userName = document.getElementById("userName").textContent;
+            var phone = document.getElementById("phone").textContent;
+            var email = document.getElementById("email").textContent;
+            var sex = document.getElementById("sex").textContent;
+            var trade = document.getElementById("trade").textContent;
+            var introduction = document.getElementById("introduction").textContent;
+            layer.open({
+                title: '修改个人信息',
+                content: '' +
+                '<div class="layui-form-item"><label class="wyp-form-label">用户名:</label><div class="wyp-input-block"><input type="text" id="userName2" name="userName2" value='+userName+' autocomplete="off" class="layui-input"></div></div>' +
+                '<div class="layui-form-item"><label class="wyp-form-label">手机号:</label><div class="wyp-input-block"><input type="text" id="phone2" name="phone2" value='+phone+' autocomplete="off" class="layui-input" readonly></div></div>' +
+                    '<div class="layui-form-item"><label class="wyp-form-label">邮箱:</label><div class="wyp-input-block"><input type="text" id="email2" name="email2" value='+email+' autocomplete="off" class="layui-input"></div></div>' +
+                    '<div class="layui-form-item"><label class="wyp-form-label">性别:</label><div class="wyp-input-block"><input type="text" id="sex2" name="sex2" value='+sex+' autocomplete="off" class="layui-input"></div></div>' +
+                    '<div class="layui-form-item"><label class="wyp-form-label">职业:</label><div class="wyp-input-block"><input type="text" id="trade2" name="trade2" value='+trade+' autocomplete="off" class="layui-input"></div></div>' +
+                    '<div class="layui-form-item"><label class="wyp-form-label">简介:</label><div class="wyp-input-block"><input type="text" id="introduction2" name="introduction2" value='+introduction+' autocomplete="off" class="layui-input"></div></div>'
+                ,
+                btn: ['修改'],
+                area: ['380px', '450px'],
+                btn1: function () {
+                    var userName2 = $('#userName2').val();
+                    var sex2 = $('#sex2').val();
+                    var email2 = $('#email2').val();
+                    var trade2 = $('#trade2').val();
+                    var introduction2 = $('#introduction2').val();
+                    if (userName2 == '' || userName2 == null) {
+                        alert("用户名不能为空");
+                    } else if (email2 == '' || email2 == null) {
+                        alert("邮箱不能为空");
+                    } else if (sex2 == '' || sex2 == null) {
+                        alert("性别不能为空");
+                    } else if (trade2 == '' || trade2 == null) {
+                        alert("职业不能为空");
+                    } else if (introduction2 == '' || introduction2 == null){
+                        alert("请输入简介")
+                    } else {
+                        $.ajax({
+                            url: "/userInfo",
+                            type: "POST",
+                            contentType: "application/json",
+                            data: "{\"userName\":\"" + userName2 + "\",\"email\":\"" + email2 + "\",\"sex\":\"" + sex2 + "\",\"trade\":\"" + trade2 + "\",\"introduction\":\"" + introduction2 + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                if (data.flag == true) {
+                                    layer.open({
+                                        title: '提示'
+                                        , content: '温馨提示:修改成功！'
+                                    });
+                                }else {
+                                    var msg = "code:" + data.code + ";desc:" + data.desc;
+                                    layer.msg(msg, {
+                                        anim: 6,
+                                        icon: 2,
+                                        time: 5000
+                                    });
+                                }
+                            },
+                            error: function (xhr, textStatus, errorThrown) {
+                                var msg = xhr.responseText;
+                                var response = JSON.parse(msg);
+
+                                layer.msg(msg, {
+                                    anim: 6,
+                                    icon: 2,
+                                    time: 5000
+                                });
+                            }
+                        });
+                    }
+                }
+            })
+        }
+
+        //触发事件
+        var active = {
+            tabAdd: function(){
+                //新增一个Tab项
+                element.tabAdd('demo', {
+                    title: '新选项'+ (Math.random()*1000|0) //用于演示
+                    ,content: '内容'+ (Math.random()*1000|0)
+                    ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+                })
+            }
+            ,tabDelete: function(othis){
+                //删除指定Tab项
+                element.tabDelete('demo', '44'); //删除：“商品管理”
+
+
+                othis.addClass('layui-btn-disabled');
+            }
+            ,tabChange: function(){
+                //切换到指定Tab项
+                element.tabChange('demo', '22'); //切换到：用户管理
+            }
+        };
+
+        ab('.site-demo-active').on('click', function(){
+            var othis = ab(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
+
+        //Hash地址的定位
+        var layid = location.hash.replace(/^#test=/, '');
+        element.tabChange('test', layid);
+
+        element.on('tab(test)', function(elem){
+            location.hash = 'test='+ ab(this).attr('lay-id');
+        });
+
+    });
+    //获取当前时间
+    window.onload = function() {
+        var show = document.getElementById("show");
+        setInterval(function() {
+            var time = new Date();   // 程序计时的月从0开始取值后+1
+            var m = time.getMonth() + 1;
+            var t = time.getFullYear() + "-" + m + "-"
+                + time.getDate() + " " + time.getHours() + ":"
+                + time.getMinutes() + ":" + time.getSeconds();
+            show.innerHTML = t;
+        }, 1000);
+    };
+
+</script>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>写博客</title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+<script type="text/javascript" src="../jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<style>
+    .wyp-input-block {
+        margin-left: 110px;
+        margin-right: 110px;
+        min-height: 36px;
+    }
+    .wyp-input-block2 {
+        margin-left: 110px;
+        min-height: 36px;
+    }
+    .wyp-input {
+        display: block;
+        width: 97%;
+        padding-left: 10px;
+    }
+    .wyp-input {
+        height: 38px;
+        line-height: 1.3;
+        line-height: 38px\9;
+        border-width: 1px;
+        border-style: solid;
+        background-color: #fff;
+        border-radius: 2px;
+        border-color: #e6e6e6;
+    }
+    .wyp-nav-item {
+        position: relative;
+        display: inline-block;
+        *display:inline ;
+        *zoom:1;
+        vertical-align: middle;
+        line-height: 60px;
+    }
+    .wyp-nav-more {
+        content: "";
+        width: 0px;
+        height: 0px;
+        border-style: solid dashed dashed;
+        border-color: #fff transparent transparent;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all .2s;
+        -webkit-transition: all .2s;
+        position: absolute;
+        top: 50%;
+        right: 3px;
+        margin-top: -3px;
+        border-width: 6px;
+        border-top-color: rgba(255, 255, 255, 0.7);
+    }
+    .wyp-nav{
+        position:relative;
+        padding:0 20px;
+        color:#fff;
+        border-radius:2px;
+        font-size:0;
+        box-sizing:border-box
+    }
+
+
+</style>
+
+</head>
+<body>
+<ul class="layui-nav layui-bg-green">
+    <li class="layui-nav-item"><a href="blogindex.html">首页</a></li>
+    <li class="layui-nav-item "><a href="blogCommon.html">博客广场</a></li>
+    <li class="layui-nav-item"><a href="">大数据</a></li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">解决方案</a>
+        <dl class="layui-nav-child">
+            <dd><a href="">移动模块</a></dd>
+            <dd><a href="">后台模版</a></dd>
+            <dd><a href="">电商平台</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item"><a href="discuss.html">讨论区</a></li>
+    <li class="layui-nav-item" style="float:right;" >
+        <a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"><p id="nameOne"></a>
+        <dl class="layui-nav-child">
+            <dd><a href="userInfo.html">个人中心</a></dd>
+            <dd><a href="javascript:;">博客管理</a></dd>
+            <dd><a href="login.html">注销</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item layui-this" style="float:right;"><a href="uploadBlog.html">写博客</a></li>
+    <li class="layui-nav-item" style="float:right;" id="show"></li>
+
+
+</ul>
+<div class="layui-form"  method="post" id="myForm" enctype="multipart/form-data">
+
+    <div class="layui-form-item ">
+    </div>
+    <div class="layui-row">
+
+         <div class="layui-form-item layui-col-xs12 layui-col-md9" >
+             <label class="layui-form-label" >请输入标题</label>
+             <div class="wyp-input-block ">
+                 <input name="title"id="blogName" class="wyp-input" type="text" placeholder="请输入标题" autocomplete="off" >
+             </div>
+         </div >
+
+         <div class=" layui-col-xs12 layui-col-md1">
+             <button class="layui-btn layui-btn-radius" type="submit">提交博客</button>
+         </div>
+    </div>
+    <div class="layui-row">
+        <div class=" layui-col-xs12 layui-col-md4">
+           <label class="layui-form-label">博客类型</label>
+             <div class="wyp-input-block2">
+                    <select name="interest" id="blogType" >
+                        <option value="" selected=""></option>
+                        <option value="0">原创</option>
+                        <option value="1">转载</option>
+                        <option value="2">翻译</option>
+                    </select>
+             </div>
+         </div>
+
+        <div class=" layui-col-xs12 layui-col-md4">
+            <label class="layui-form-label">博客标签</label>
+                <div class="wyp-input-block2">
+                    <input name="blogLabel" id="blogLabel" class="layui-input" type="text" placeholder="请输入标签" autocomplete="off" >
+                </div>
+         </div>
+
+        <!--<div class="layui-col-xs12 layui-col-md4">-->
+            <!--<ul class="wyp-nav">-->
+                <!--<li class="layui-nav-item" >-->
+                    <!--<a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"></a>-->
+                    <!--<dl class="layui-nav-child">-->
+                        <!--<dd><a href="javascript:;">我的关注</a></dd>-->
+                        <!--<dd><a href="javascript:;">我的收藏</a></dd>-->
+                        <!--<dd><a href="javascript:;">个人中心</a></dd>-->
+                        <!--<dd><a href="javascript:;">注销</a></dd>-->
+                    <!--</dl>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+
+    </div>
+    <div class="layui-form-item ">
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <div class="wyp-input-block">
+            <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="content"></textarea>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    layui.use(['form', 'layedit', 'laydate','element'], function() {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+        var $ = layui.jquery
+            ,element = layui.element;
+
+        window.onload = function(){
+            func1();
+        };
+        function func1() {
+            $.ajax({
+                url: "/getUserInfo",
+                type: "GET",
+                contentType: "application/json",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        $("#nameOne").text(data.message.get("userName"));
+                    }
+                }
+            });
+        }
+        //上传图片,必须放在 创建一个编辑器前面
+        layedit.set({
+            uploadImage: {
+                url: '${pageContext.request.contextPath}/uploadFile' //接口url
+                ,type: 'post' //默认post
+            }
+        });
+        //创建一个编辑器
+        var editIndex = layedit.build('content',{
+                height:600,
+            }
+        );
+        var active = {
+            tabAdd: function(){
+                //新增一个Tab项
+                element.tabAdd('demo', {
+                    title: '新选项'+ (Math.random()*1000|0) //用于演示
+                    ,content: '内容'+ (Math.random()*1000|0)
+                    ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+                })
+            }
+            ,tabDelete: function(othis){
+                //删除指定Tab项
+                element.tabDelete('demo', '44'); //删除：“商品管理”
+
+
+                othis.addClass('layui-btn-disabled');
+            }
+            ,tabChange: function(){
+                //切换到指定Tab项
+                element.tabChange('demo', '22'); //切换到：用户管理
+            }
+        };
+
+        $('.site-demo-active').on('click', function(){
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
+
+        //Hash地址的定位
+        var layid = location.hash.replace(/^#test=/, '');
+        element.tabChange('test', layid);
+
+        element.on('tab(test)', function(elem){
+            location.hash = 'test='+ $(this).attr('lay-id');
+        });
+    });
+    window.onload = function() {
+        var show = document.getElementById("show");
+        setInterval(function() {
+            var time = new Date();   // 程序计时的月从0开始取值后+1
+            var m = time.getMonth() + 1;
+            var t = time.getFullYear() + "-" + m + "-"
+                + time.getDate() + " " + time.getHours() + ":"
+                + time.getMinutes() + ":" + time.getSeconds();
+            show.innerHTML = t;
+        }, 1000);
+    };
+</script>
+</html>

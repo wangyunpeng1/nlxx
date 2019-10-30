@@ -10,4 +10,7 @@ public interface LoginDao
 {
     //根据账号找密码
     public String findPassword(@Param("account") String account);
+
+    //根据账号找Id
+    public String findUserId(@Param("account") String account);
 }

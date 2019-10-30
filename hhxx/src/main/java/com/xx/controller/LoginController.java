@@ -6,7 +6,11 @@ import com.xx.vo.Login;
 import com.xx.vo.Result;
 import com.xx.vo.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("pages")
@@ -16,6 +20,8 @@ public class LoginController
     private LoginService loginService;
     @Autowired
     private RegisterService registerService;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     /**
      * 账号密码登陆
@@ -23,12 +29,21 @@ public class LoginController
      * @return
      */
     @PostMapping("login")
-    public Result login(@RequestBody Login login)
+    public Result login(@RequestBody Login login, HttpSession httpSession)
     {
         System.out.println("login登陆");
         boolean flag = loginService.accountLogin(login);
         if (flag)
         {
+            String userId = loginService.getUserId(login.getAccount());
+            httpSession.setAttribute("userId",userId);
+            httpSession.setAttribute("userName",redisTemplate.opsForHash().entries("user_"+userId).get("userName"));
+            httpSession.setAttribute("email",redisTemplate.opsForHash().entries("user_"+userId).get("email"));
+            httpSession.setAttribute("phone",redisTemplate.opsForHash().entries("user_"+userId).get("phone"));
+            httpSession.setAttribute("sex",redisTemplate.opsForHash().entries("user_"+userId).get("sex"));
+            httpSession.setAttribute("trade",redisTemplate.opsForHash().entries("user_"+userId).get("trade"));
+            httpSession.setAttribute("introduction",redisTemplate.opsForHash().entries("user_"+userId).get("introduction"));
+            httpSession.setAttribute("registerDate",redisTemplate.opsForHash().entries("user_"+userId).get("registerDate"));
             return new Result(true,StatusCode.OK,"登陆成功");
         }else{
             return new Result(false,StatusCode.AccountError,"账号或密码错误");

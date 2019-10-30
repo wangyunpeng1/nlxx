@@ -6,6 +6,7 @@ public class User
     private String account;     //账号
     private String password;    //密码
     private String admin;       //是否为管理员
+    private String userName;    //用户名
     private String phone;       //手机号
 
     public String getUserId()
@@ -56,5 +57,13 @@ public class User
     public void setPhone(String phone)
     {
         this.phone = phone;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

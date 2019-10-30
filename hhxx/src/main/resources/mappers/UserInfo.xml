@@ -10,4 +10,7 @@
         introduction = #{introduction}
         where userId = #{userId}
     </update>
+    <select id="getUserInfo" parameterType="string" resultType="com.xx.vo.UserInfo">
+        select * from userInfo where userId = #{userId}
+    </select>
 </mapper>

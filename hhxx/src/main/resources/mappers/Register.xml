@@ -14,8 +14,8 @@
         values (#{userId},#{account},#{password},#{admin},#{phone})
     </insert>
     <insert id="registerUserInfo" parameterType="com.xx.vo.UserInfo">
-        insert into userInfo (userId,phone,registerDate)
-        values (#{userId},#{phone},#{registerDate})
+        insert into userInfo (userId,userName,phone,registerDate)
+        values (#{userId},#{userName},#{phone},#{registerDate})
     </insert>
     <insert id="registerUserSum" parameterType="com.xx.vo.UserSum">
         insert into userSum (userId,fabulous,fans,blogs,visit)

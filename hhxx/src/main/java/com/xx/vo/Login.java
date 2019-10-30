@@ -2,6 +2,7 @@ package com.xx.vo;
 
 public class Login
 {
+
     private String account;
     private String password;
 

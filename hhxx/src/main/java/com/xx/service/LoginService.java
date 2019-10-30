@@ -42,4 +42,12 @@ public class LoginService
         boolean flag = registerDao.isExistPhone(phone);
         return flag;
     }
+
+    //获取Id
+    public String getUserId(String account)
+    {
+        String userId = loginDao.findUserId(account);
+        return userId;
+    }
+
 }

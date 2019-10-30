@@ -42,6 +42,7 @@ public class RegisterService
             //userInfo表
             UserInfo userInfo = new UserInfo();
             userInfo.setUserId(userId);
+            userInfo.setUserName(user.getUserName());
             userInfo.setPhone(user.getPhone());
             userInfo.setRegisterDate(getTime());
             registerDao.registerUserInfo(userInfo);
@@ -54,6 +55,7 @@ public class RegisterService
             userSum.setVisit(0);
             registerDao.registerUserSum(userSum);
 
+            redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"userName",userInfo.getUserName());
             redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"phone",userInfo.getPhone());
             redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"registerDate",userInfo.getRegisterDate());
             return true;
@@ -75,7 +77,6 @@ public class RegisterService
             redisTemplate.opsForValue().set("userId",1);
         }
         String userId =redisTemplate.opsForValue().get("userId").toString();
-        System.out.println(userId);
         return userId;
     }
 
