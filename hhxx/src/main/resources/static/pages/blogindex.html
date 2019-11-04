@@ -10,33 +10,77 @@
     <link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
     <script type="text/javascript" src="../jquery/jquery.min.js"></script>
     <script type="text/javascript" src="../layui/layui.js"></script>
+    <style>
+        .wyp-input-block {
+            margin-left: 110px;
+            margin-right: 110px;
+            min-height: 36px;
+        }
+        .bar6 input {
+            height: 42px;
+            width: 300px;
+            /*#c5464a*/
+            border: 2px solid #fffef93b;
+            border-radius: 5px;
+            background: transparent;
+            color: #C0C0C0;
+            top: 0;
+            right: 0;
+        }
+        .bar6 input::-webkit-input-placeholder {
+            color: #C0C0C0;
+            font-size: 16px;
+        }
+
+
+        .bar6 button {
+            background: #46c5a929;
+            border-radius: 12px 12px 12px 12px;
+            width: 65px;
+            height: 40px;
+            top: 0;
+            right: 0;
+        }
+        .bar6 button:before {
+            content: "搜索";
+            font-size: 16px;
+            color: #F9F0DA;
+        }
+        .layui-nav *{font-size:15px}
+    </style>
 </head>
 <body>
-<ul class="layui-nav layui-bg-green">
+<ul class="layui-nav" style="background-color: #464646">
 
-    <li class="layui-nav-item layui-this"><a href="blogindex.html">首页</a></li>
-    <li class="layui-nav-item "><a href="blogCommon.html">博客广场</a></li>
-    <li class="layui-nav-item"><a href="">大数据</a></li>
+    <li class="layui-nav-item layui-this"><a href="blogindex.html"><img style="width: 200px" src="../img/yujiblog.png"></a></li>
+    <li class="layui-nav-item "><a href="blogCommon.html">技术分享</a></li>
+    <li class="layui-nav-item"><a href="life.html">生活乐趣</a></li>
     <li class="layui-nav-item">
-        <a href="javascript:;">解决方案</a>
-        <dl class="layui-nav-child">
-            <dd><a href="">移动模块</a></dd>
-            <dd><a href="">后台模版</a></dd>
-            <dd><a href="">电商平台</a></dd>
-        </dl>
+        <a href="javascript:;">心情随笔</a>
+        <!--<dl class="layui-nav-child">-->
+            <!--<dd><a href="">移动模块</a></dd>-->
+            <!--<dd><a href="">后台模版</a></dd>-->
+            <!--<dd><a href="">电商平台</a></dd>-->
+        <!--</dl>-->
     </li>
-    <li class="layui-nav-item"><a href="discuss.html">讨论区</a></li>
+    <li class="layui-nav-item"><a href="discuss.html">留言</a></li>
+    <li class="layui-nav-item"><a href="aboutMe.html">关于我</a></li>
+    <li class="layui-nav-item bar6" style="padding: 2px 0px;" ><input type="text"  placeholder="请输入您要搜索的内容..." ><button type="submit" ></button></li>
     <li class="layui-nav-item" style="float:right;" >
-        <a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"><p id="nameOne"></p></a>
+        <a href="login.html" id="nameOne"></a>
+    </li>
+    <li class="layui-nav-item" style="float:right;">
+        <a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"></a>
         <dl class="layui-nav-child">
-            <dd><a href="userInfo.html">个人中心</a></dd>
+            <dd><a id="PeCe">个人中心</a></dd>
             <dd><a href="javascript:;">博客管理</a></dd>
+            <dd><a href="javascript:;">我的收藏</a></dd>
+            <dd><a href="javascript:;">我的关注</a></dd>
             <dd><a href="login.html">注销</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item" style="float:right;"><a href="uploadBlog.html">写博客</a></li>
-    <li class="layui-nav-item" style="float:right;" id="show"></li>
-
+    <li class="layui-nav-item" style="float:right;"><a id="writeBlog">写博客</a></li>
+    <li class="layui-nav-item" style="float:right;" ><a id="show"></a></li>
 </ul>
 
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
@@ -59,81 +103,83 @@
 </div>
 
 <div class="layui-row layui-col-space15">
-    <div class="layui-col-md4">
+    <div class="layui-col-md3">
         <div class="layui-card">
-            <div class="layui-card-header" style="font-size:30px">点赞排行TOP10</div>
+            <div class="layui-card-header" style="font-size:30px;background-color: #afb4db;">点赞排行TOP10</div>
             <div class="layui-card-body">
-                <a style="font-size:23px">Nob.1:</a>
+                <a style="font-size:23px" id="Fab1"></a>
                 <br>
-                    <a style="font-size:23px">Nob.2:</a>
+                    <a style="font-size:23px" id="Fab2"></a>
                 <br>
-                        <a style="font-size:23px">Nob.3:</a>
+                        <a style="font-size:23px" id="Fab3"></a>
                 <br>
-                            <a style="font-size:23px">Nob.4:</a>
+                            <a style="font-size:23px" id="Fab4"></a>
                 <br>
-                                <a style="font-size:23px">Nob.5:</a>
+                                <a style="font-size:23px" id="Fab5"></a>
                 <br>
-                                    <a style="font-size:23px">Nob.6:</a>
+                                    <a style="font-size:23px" id="Fab6"></a>
                 <br>
-                                        <a style="font-size:23px">Nob.7:</a>
+                                        <a style="font-size:23px" id="Fab7"></a>
                 <br>
-                                            <a style="font-size:23px">Nob.8:</a>
+                                            <a style="font-size:23px" id="Fab8"></a>
                 <br>
-                                                <a style="font-size:23px">Nob.9:</a>
+                                                <a style="font-size:23px" id="Fab9"></a>
                 <br>
-                                                    <a style="font-size:23px">Nob.10:</a>
+                                                    <a style="font-size:23px" id="Fab10"></a>
             </div>
         </div>
     </div>
-        <div class="layui-col-md4">
+    <div class="layui-col-md1"></div>
+        <div class="layui-col-md3">
             <div class="layui-card">
-                <div class="layui-card-header" style="font-size:30px">收藏排行TOP10</div>
+                <div class="layui-card-header" style="font-size:30px;background-color: #afb4db;">收藏排行TOP10</div>
                 <div class="layui-card-body">
-                    <a style="font-size:23px">Nob.1:</a>
+                    <a style="font-size:23px" id="Col1"></a>
                     <br>
-                        <a style="font-size:23px">Nob.2:</a>
+                        <a style="font-size:23px" id="Col2"></a>
                     <br>
-                            <a style="font-size:23px">Nob.3:</a>
+                            <a style="font-size:23px" id="Col3"></a>
                     <br>
-                                <a style="font-size:23px">Nob.4:</a>
+                                <a style="font-size:23px" id="Col4"></a>
                     <br>
-                                    <a style="font-size:23px">Nob.5:</a>
+                                    <a style="font-size:23px" id="Col5"></a>
                     <br>
-                                        <a style="font-size:23px">Nob.6:</a>
+                                        <a style="font-size:23px" id="Col6"></a>
                     <br>
-                                            <a style="font-size:23px">Nob.7:</a>
+                                            <a style="font-size:23px" id="Col7"></a>
                     <br>
-                                                <a style="font-size:23px">Nob.8:</a>
+                                                <a style="font-size:23px" id="Col8"></a>
                     <br>
-                                                    <a style="font-size:23px">Nob.9:</a>
+                                                    <a style="font-size:23px" id="Col9"></a>
                     <br>
-                                                        <a style="font-size:23px">Nob.10:</a>
+                                                        <a style="font-size:23px" id="Col10"></a>
                 </div>
             </div>
         </div>
-            <div class="layui-col-md4">
+    <div class="layui-col-md1"></div>
+            <div class="layui-col-md3">
                 <div class="layui-card">
-                    <div class="layui-card-header" style="font-size:30px">浏览排行TOP10</div>
+                    <div class="layui-card-header" style="font-size:30px;background-color: #afb4db;">浏览排行TOP10</div>
                     <div class="layui-card-body">
-                        <a style="font-size:23px">Nob.1:</a>
+                        <a style="font-size:23px" id="Vis1"></a>
                         <br>
-                            <a style="font-size:23px">Nob.2:</a>
+                            <a style="font-size:23px" id="Vis2"></a>
                         <br>
-                                <a style="font-size:23px">Nob.3:</a>
+                                <a style="font-size:23px" id="Vis3"></a>
                         <br>
-                                    <a style="font-size:23px">Nob.4:</a>
+                                    <a style="font-size:23px" id="Vis4"></a>
                         <br>
-                                        <a style="font-size:23px">Nob.5:</a>
+                                        <a style="font-size:23px" id="Vis5"></a>
                         <br>
-                                            <a style="font-size:23px">Nob.6:</a>
+                                            <a style="font-size:23px" id="Vis6"></a>
                         <br>
-                                                <a style="font-size:23px">Nob.7:</a>
+                                                <a style="font-size:23px" id="Vis7"></a>
                         <br>
-                                                    <a style="font-size:23px">Nob.8:</a>
+                                                    <a style="font-size:23px" id="Vis8"></a>
                         <br>
-                                                        <a style="font-size:23px">Nob.9:</a>
+                                                        <a style="font-size:23px" id="Vis9"></a>
                         <br>
-                                                            <a style="font-size:23px">Nob.10:</a>
+                                                            <a style="font-size:23px" id="Vis10"></a>
                     </div>
                 </div>
             </div>
@@ -154,8 +200,23 @@
             ,interval: 3000
         });
         window.onload = function(){
+            func0();
             func1();
+            func2();
+            func3();
+            func4();
         };
+        function func0() {
+            var show = document.getElementById("show");
+            setInterval(function() {
+                var time = new Date();   // 程序计时的月从0开始取值后+1
+                var m = time.getMonth() + 1;
+                var t = time.getFullYear() + "-" + m + "-"
+                    + time.getDate() + " " + time.getHours() + ":"
+                    + time.getMinutes() + ":" + time.getSeconds();
+                show.innerHTML = t;
+            }, 1000);
+        }
         function func1() {
             $.ajax({
                 url: "getUserInfo",
@@ -165,11 +226,139 @@
                 success: function (body) {
                     console.log(body);
                     if (body.flag == true) {
-                        $("#nameOne").text(body.data.get("userName"));
+                        $("#nameOne").text(body.data["userName"]);
+                        $("#nameOne").removeAttr("href");
+                    }else if(body.flag == false){
+                        $("#nameOne").text(body.data);
+                        // $("#nameOne").attr("href");
+
                     }
                 }
             });
         }
+        //获取前10点赞
+        function func2() {
+            $.ajax({
+                url: "getTopTenFabulousBlogs",
+                type: "POST",
+                contentType: "application/json",
+                async: true,
+                success: function (body) {
+                    console.log(body);
+                    if (body.flag == true) {
+                        $("#Fab1").text("Nob.1:"+body.data[9]);
+                        $("#Fab2").text("Nob.2:"+body.data[8]);
+                        $("#Fab3").text("Nob.3:"+body.data[7]);
+                        $("#Fab4").text("Nob.4:"+body.data[6]);
+                        $("#Fab5").text("Nob.5:"+body.data[5]);
+                        $("#Fab6").text("Nob.6:"+body.data[4]);
+                        $("#Fab7").text("Nob.7:"+body.data[3]);
+                        $("#Fab8").text("Nob.8:"+body.data[2]);
+                        $("#Fab9").text("Nob.9:"+body.data[1]);
+                        $("#Fab10").text("Nob.10:"+body.data[0]);
+                    }
+                }
+            });
+        }
+        //获取前10收藏
+        function func3() {
+            $.ajax({
+                url: "getTopTenCollectionsBlogs",
+                type: "POST",
+                contentType: "application/json",
+                async: true,
+                success: function (body) {
+                    console.log(body);
+                    if (body.flag == true) {
+                        $("#Col1").text("Nob.1:"+body.data[9]);
+                        $("#Col2").text("Nob.2:"+body.data[8]);
+                        $("#Col3").text("Nob.3:"+body.data[7]);
+                        $("#Col4").text("Nob.4:"+body.data[6]);
+                        $("#Col5").text("Nob.5:"+body.data[5]);
+                        $("#Col6").text("Nob.6:"+body.data[4]);
+                        $("#Col7").text("Nob.7:"+body.data[3]);
+                        $("#Col8").text("Nob.8:"+body.data[2]);
+                        $("#Col9").text("Nob.9:"+body.data[1]);
+                        $("#Col10").text("Nob.10:"+body.data[0]);
+                    }
+                }
+            });
+        }
+        //获取前10浏览
+        function func4() {
+            $.ajax({
+                url: "getTopTenVisitBlogs",
+                type: "POST",
+                contentType: "application/json",
+                async: true,
+                success: function (body) {
+                    console.log(body);
+                    if (body.flag == true) {
+                        $("#Vis1").text("Nob.1:"+body.data[9]);
+                        $("#Vis2").text("Nob.2:"+body.data[8]);
+                        $("#Vis3").text("Nob.3:"+body.data[7]);
+                        $("#Vis4").text("Nob.4:"+body.data[6]);
+                        $("#Vis5").text("Nob.5:"+body.data[5]);
+                        $("#Vis6").text("Nob.6:"+body.data[4]);
+                        $("#Vis7").text("Nob.7:"+body.data[3]);
+                        $("#Vis8").text("Nob.8:"+body.data[2]);
+                        $("#Vis9").text("Nob.9:"+body.data[1]);
+                        $("#Vis10").text("Nob.10:"+body.data[0]);
+                    }
+                }
+            });
+        }
+
+        //判断是否登陆，提示用户
+        $("#PeCe").on("click",function(){
+            PeCe();
+        });
+        function PeCe() {
+            $.ajax({
+                url: "getUserInfo",
+                type: "GET",
+                contentType: "application/json",
+                async: true,
+                success: function (body) {
+                    console.log(body);
+                    if (body.flag == true) {
+                        window.location.href = "userInfo.html";
+                    }else if(body.flag == false){
+                        layer.open({
+                            title: '提示'
+                            , icon:2
+                            , content: '温馨提示:请登陆！'
+                        });
+                    }
+                }
+            });
+        }
+
+        $("#writeBlog").on("click",function(){
+            writeBlog();
+        });
+
+        function writeBlog() {
+            $.ajax({
+                url: "getUserInfo",
+                type: "GET",
+                contentType: "application/json",
+                async: true,
+                success: function (body) {
+                    console.log(body);
+                    if (body.flag == true) {
+                        window.location.href = "uploadBlog.html";
+                    }else if(body.flag == false){
+                        layer.open({
+                            title: '提示'
+                            , icon:2
+                            , content: '温馨提示:请登陆！'
+                        });
+                    }
+                }
+            });
+        }
+
         //触发事件
         var active = {
             tabAdd: function(){
@@ -208,17 +397,7 @@
 
     });
 
-    window.onload = function() {
-        var show = document.getElementById("show");
-        setInterval(function() {
-            var time = new Date();   // 程序计时的月从0开始取值后+1
-            var m = time.getMonth() + 1;
-            var t = time.getFullYear() + "-" + m + "-"
-                + time.getDate() + " " + time.getHours() + ":"
-                + time.getMinutes() + ":" + time.getSeconds();
-            show.innerHTML = t;
-        }, 1000);
-    };
+
 
 </script>
 

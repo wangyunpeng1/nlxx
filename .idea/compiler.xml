@@ -12,5 +12,8 @@
         <module name="wyxx" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="game" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -12,5 +12,8 @@ public interface LoginDao
     public String findPassword(@Param("account") String account);
 
     //根据账号找Id
-    public String findUserId(@Param("account") String account);
+    public String findAccountUserId(@Param("account") String account);
+    //根据手机号找Id
+
+    public String findPhoneUserId(@Param("phone") String phone);
 }

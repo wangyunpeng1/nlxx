@@ -3,18 +3,10 @@ package com.xx.vo;
 public class UserSum
 {
     private String userId;
-    private int fabulous;   //点赞数
-    private int fans;       //关注数
-    private int blogs;      //博客数
-    private int visit;      //浏览数
-
-    public int getVisit() {
-        return visit;
-    }
-
-    public void setVisit(int visit) {
-        this.visit = visit;
-    }
+    private long fabulous;   //点赞数
+    private long fans;       //关注数
+    private long blogs;      //博客数
+    private long visit;      //浏览数
 
     public String getUserId() {
         return userId;
@@ -24,29 +16,35 @@ public class UserSum
         this.userId = userId;
     }
 
-    public int getFabulous() {
+    public long getFabulous() {
         return fabulous;
     }
 
-    public void setFabulous(int fabulous) {
+    public void setFabulous(long fabulous) {
         this.fabulous = fabulous;
     }
 
-    public int getFans() {
+    public long getFans() {
         return fans;
     }
 
-    public void setFans(int fans) {
+    public void setFans(long fans) {
         this.fans = fans;
     }
 
-    public int getBlogs() {
+    public long getBlogs() {
         return blogs;
     }
 
-    public void setBlogs(int blogs) {
+    public void setBlogs(long blogs) {
         this.blogs = blogs;
     }
 
+    public long getVisit() {
+        return visit;
+    }
 
+    public void setVisit(long visit) {
+        this.visit = visit;
+    }
 }

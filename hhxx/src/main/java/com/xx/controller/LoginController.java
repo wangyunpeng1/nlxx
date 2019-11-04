@@ -6,7 +6,6 @@ import com.xx.vo.Login;
 import com.xx.vo.Result;
 import com.xx.vo.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +34,7 @@ public class LoginController
         boolean flag = loginService.accountLogin(login);
         if (flag)
         {
-            String userId = loginService.getUserId(login.getAccount());
+            String userId = loginService.getAccountUserId(login.getAccount());
             httpSession.setAttribute("userId",userId);
             httpSession.setAttribute("userName",redisTemplate.opsForHash().entries("user_"+userId).get("userName"));
             httpSession.setAttribute("email",redisTemplate.opsForHash().entries("user_"+userId).get("email"));
@@ -56,12 +55,21 @@ public class LoginController
      * @return
      */
     @PostMapping("phoneLogin/{phone}/{code}")
-    public Result phoneLogin(@PathVariable String phone,@PathVariable String code)
+    public Result phoneLogin(@PathVariable String phone,@PathVariable String code,HttpSession httpSession)
     {
         System.out.println("phoneLogin手机号登陆");
         boolean flag = loginService.phoneLogin(phone,code);
         if (flag)
         {
+            String userId = loginService.getPhoneUserId(phone);
+            httpSession.setAttribute("userId",userId);
+            httpSession.setAttribute("userName",redisTemplate.opsForHash().entries("user_"+userId).get("userName"));
+            httpSession.setAttribute("email",redisTemplate.opsForHash().entries("user_"+userId).get("email"));
+            httpSession.setAttribute("phone",redisTemplate.opsForHash().entries("user_"+userId).get("phone"));
+            httpSession.setAttribute("sex",redisTemplate.opsForHash().entries("user_"+userId).get("sex"));
+            httpSession.setAttribute("trade",redisTemplate.opsForHash().entries("user_"+userId).get("trade"));
+            httpSession.setAttribute("introduction",redisTemplate.opsForHash().entries("user_"+userId).get("introduction"));
+            httpSession.setAttribute("registerDate",redisTemplate.opsForHash().entries("user_"+userId).get("registerDate"));
             return new Result(true,StatusCode.OK,"登陆成功");
         }else{
             return new Result(false,StatusCode.CodeError,"验证码错误");

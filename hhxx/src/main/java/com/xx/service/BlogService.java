@@ -1,15 +1,17 @@
 package com.xx.service;
 
+import com.sun.javafx.collections.MappingChange;
 import com.xx.dao.BlogDao;
-import com.xx.vo.Blog;
-import com.xx.vo.BlogInfo;
-import com.xx.vo.BlogSum;
+import com.xx.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 @Service
 public class BlogService
@@ -94,5 +96,37 @@ public class BlogService
         blog.setCreateDate(blogInfo.getCreateDate());
 
         return blog;
+    }
+
+    //获取前10点赞的博客
+    public Set<String> getTopTenFabulousBlogs()
+    {
+        Set<String> blogFabulous = redisTemplate.opsForZSet().range("TopTenBlogs_Fabulous",0,9);
+        return blogFabulous;
+    }
+
+    //获取前10浏览的博客
+    public Set<String> getTopTenVisitBlogs()
+    {
+        Set<String> blogVisits = redisTemplate.opsForZSet().range("TopTenBlogs_Visit",0,9);
+        return blogVisits;
+    }
+
+    //获取前10被收藏的博客
+    public Set<String> getTopTenCollectionsBlogs()
+    {
+        Set<String> blogCollections = redisTemplate.opsForZSet().range("TopTenBlogs_Collections",0,9);
+        return blogCollections;
+    }
+
+    //id转博客
+    public Map<String,String> getblogIdName(Set<String> infos)
+    {
+        Map<String,String> map = new HashMap<String, String>();
+        for (int i=0;i<infos.size();i++)
+        {
+            map.put("" + i, blogDao.getBlogName(infos.toArray()[i].toString()));
+        }
+        return map;
     }
 }

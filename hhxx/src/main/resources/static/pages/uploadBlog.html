@@ -64,35 +64,73 @@
         font-size:0;
         box-sizing:border-box
     }
+    .bar6 input {
+        height: 42px;
+        width: 300px;
+        /*#c5464a*/
+        border: 2px solid #fffef93b;
+        border-radius: 5px;
+        background: transparent;
+        color: #C0C0C0;
+        top: 0;
+        right: 0;
+    }
+    .bar6 input::-webkit-input-placeholder {
+        color: #C0C0C0;
+        font-size: 16px;
+    }
+
+
+    .bar6 button {
+        background: #46c5a929;
+        border-radius: 12px 12px 12px 12px;
+        width: 65px;
+        height: 40px;
+        top: 0;
+        right: 0;
+    }
+    .bar6 button:before {
+        content: "搜索";
+        font-size: 16px;
+        color: #F9F0DA;
+    }
+    .layui-nav *{font-size:15px}
 
 
 </style>
 
 </head>
 <body>
-<ul class="layui-nav layui-bg-green">
-    <li class="layui-nav-item"><a href="blogindex.html">首页</a></li>
-    <li class="layui-nav-item "><a href="blogCommon.html">博客广场</a></li>
-    <li class="layui-nav-item"><a href="">大数据</a></li>
+<ul class="layui-nav " style="background-color: #464646">
+    <li class="layui-nav-item"><a href="blogindex.html"><img style="width: 200px" src="../img/yujiblog.png"></a></li>
+    <li class="layui-nav-item "><a href="blogCommon.html">技术分享</a></li>
+    <li class="layui-nav-item"><a href="life.html">生活乐趣</a></li>
     <li class="layui-nav-item">
-        <a href="javascript:;">解决方案</a>
-        <dl class="layui-nav-child">
-            <dd><a href="">移动模块</a></dd>
-            <dd><a href="">后台模版</a></dd>
-            <dd><a href="">电商平台</a></dd>
-        </dl>
+        <a href="javascript:;">心情随笔</a>
+        <!--<dl class="layui-nav-child">-->
+            <!--<dd><a href="">移动模块</a></dd>-->
+            <!--<dd><a href="">后台模版</a></dd>-->
+            <!--<dd><a href="">电商平台</a></dd>-->
+        <!--</dl>-->
     </li>
-    <li class="layui-nav-item"><a href="discuss.html">讨论区</a></li>
+    <li class="layui-nav-item"><a href="discuss.html">留言</a></li>
+    <li class="layui-nav-item"><a href="aboutMe.html">关于我</a></li>
+    <li class="layui-nav-item bar6" style="padding: 2px 0px;" ><input type="text"  placeholder="请输入您要搜索的内容..." ><button type="submit" ></button></li>
     <li class="layui-nav-item" style="float:right;" >
-        <a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"><p id="nameOne"></a>
+        <a href="javascript:;" id="nameOne"></a>
+    </li>
+    <li class="layui-nav-item" style="float:right;" >
+        <a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"></a>
         <dl class="layui-nav-child">
             <dd><a href="userInfo.html">个人中心</a></dd>
             <dd><a href="javascript:;">博客管理</a></dd>
+            <dd><a href="javascript:;">我的收藏</a></dd>
+            <dd><a href="javascript:;">我的关注</a></dd>
             <dd><a href="login.html">注销</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item layui-this" style="float:right;"><a href="uploadBlog.html">写博客</a></li>
-    <li class="layui-nav-item" style="float:right;" id="show"></li>
+    <li class="layui-nav-item" style="float:right;" ><a id="show"></a></li>
 
 
 </ul>
@@ -172,14 +210,14 @@
         };
         function func1() {
             $.ajax({
-                url: "/getUserInfo",
+                url: "getUserInfo",
                 type: "GET",
                 contentType: "application/json",
                 async: true,
                 success: function (data) {
                     console.log(data);
                     if (data.flag == true) {
-                        $("#nameOne").text(data.message.get("userName"));
+                        $("#nameOne").text(data.data["userName"]);
                     }
                 }
             });
@@ -191,8 +229,10 @@
                 ,type: 'post' //默认post
             }
         });
+
         //创建一个编辑器
         var editIndex = layedit.build('content',{
+            tool: ['strong', 'italic','underline','del','|','left','center','right','|','link','unlink','face','image','|','code'],
                 height:600,
             }
         );
@@ -230,17 +270,19 @@
         element.on('tab(test)', function(elem){
             location.hash = 'test='+ $(this).attr('lay-id');
         });
+
+        window.onload = function() {
+            var show = document.getElementById("show");
+            setInterval(function() {
+                var time = new Date();   // 程序计时的月从0开始取值后+1
+                var m = time.getMonth() + 1;
+                var t = time.getFullYear() + "-" + m + "-"
+                    + time.getDate() + " " + time.getHours() + ":"
+                    + time.getMinutes() + ":" + time.getSeconds();
+                show.innerHTML = t;
+            }, 1000);
+        };
     });
-    window.onload = function() {
-        var show = document.getElementById("show");
-        setInterval(function() {
-            var time = new Date();   // 程序计时的月从0开始取值后+1
-            var m = time.getMonth() + 1;
-            var t = time.getFullYear() + "-" + m + "-"
-                + time.getDate() + " " + time.getHours() + ":"
-                + time.getMinutes() + ":" + time.getSeconds();
-            show.innerHTML = t;
-        }, 1000);
-    };
+
 </script>
 </html>

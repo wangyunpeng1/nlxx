@@ -3,11 +3,10 @@ package com.xx.vo;
 public class BlogSum
 {
     private String blogId;
-    private int fabulos;
-    private int comments;
-    private int collections;
-    private int visit;
-
+    private long fabulos;
+    private long comments;
+    private long collections;
+    private long visit;
 
     public String getBlogId() {
         return blogId;
@@ -17,35 +16,35 @@ public class BlogSum
         this.blogId = blogId;
     }
 
-    public int getFabulos() {
+    public long getFabulos() {
         return fabulos;
     }
 
-    public void setFabulos(int fabulos) {
+    public void setFabulos(long fabulos) {
         this.fabulos = fabulos;
     }
 
-    public int getComments() {
+    public long getComments() {
         return comments;
     }
 
-    public void setComments(int comments) {
+    public void setComments(long comments) {
         this.comments = comments;
     }
 
-    public int getCollections() {
+    public long getCollections() {
         return collections;
     }
 
-    public void setCollections(int collections) {
+    public void setCollections(long collections) {
         this.collections = collections;
     }
 
-    public int getVisit() {
+    public long getVisit() {
         return visit;
     }
 
-    public void setVisit(int visit) {
+    public void setVisit(long visit) {
         this.visit = visit;
     }
 }

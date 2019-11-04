@@ -1,9 +1,8 @@
 package com.xx.vo;
 
-public class BlogVisit
-{
+public class BlogName {
     private String blogId;
-    private long visit;
+    private String blogName;
 
     public String getBlogId() {
         return blogId;
@@ -13,11 +12,11 @@ public class BlogVisit
         this.blogId = blogId;
     }
 
-    public long getVisit() {
-        return visit;
+    public String getBlogName() {
+        return blogName;
     }
 
-    public void setVisit(long visit) {
-        this.visit = visit;
+    public void setBlogName(String blogName) {
+        this.blogName = blogName;
     }
 }

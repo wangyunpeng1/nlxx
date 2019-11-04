@@ -7,8 +7,12 @@
     </select>
 
 
-    <select id="findUserId" parameterType="string" resultType="java.lang.String">
+    <select id="findAccountUserId" parameterType="string" resultType="java.lang.String">
         select userId from user where account = #{account}
+    </select>
+
+    <select id="findPhoneUserId" parameterType="string" resultType="java.lang.String">
+        select userId from user where phone = #{phone}
     </select>
 
 </mapper>

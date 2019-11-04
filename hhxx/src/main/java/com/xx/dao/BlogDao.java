@@ -1,9 +1,6 @@
 package com.xx.dao;
 
-import com.xx.vo.BlogFabulous;
-import com.xx.vo.BlogInfo;
-import com.xx.vo.BlogSum;
-import com.xx.vo.BlogVisit;
+import com.xx.vo.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
@@ -39,5 +36,10 @@ public interface BlogDao
     public List<BlogFabulous> topTenFabulous();
     //查浏览量排行前10的博客
     public List<BlogVisit> topTenVisit();
+    //查收藏量排行前10的博客
+    public List<BlogCollections> topTenCollections();
+    //查看博客名字
+    public String getBlogName(@Param("blogId") String blogId);
+
 
 }

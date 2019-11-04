@@ -3,7 +3,7 @@ package com.xx.vo;
 public class BlogFabulous
 {
     private String blogId;
-    private int fabulous;
+    private long fabulous;
 
     public String getBlogId() {
         return blogId;
@@ -13,11 +13,11 @@ public class BlogFabulous
         this.blogId = blogId;
     }
 
-    public int getFabulous() {
+    public long getFabulous() {
         return fabulous;
     }
 
-    public void setFabulous(int fabulous) {
+    public void setFabulous(long fabulous) {
         this.fabulous = fabulous;
     }
 }

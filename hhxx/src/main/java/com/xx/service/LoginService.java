@@ -44,9 +44,15 @@ public class LoginService
     }
 
     //获取Id
-    public String getUserId(String account)
+    public String getAccountUserId(String account)
     {
-        String userId = loginDao.findUserId(account);
+        String userId = loginDao.findAccountUserId(account);
+        return userId;
+    }
+    //获取Id
+    public String getPhoneUserId(String phone)
+    {
+        String userId = loginDao.findPhoneUserId(phone);
         return userId;
     }
 
