@@ -11,14 +11,6 @@
     <script type="text/javascript" src="../jquery/jquery.min.js"></script>
     <script type="text/javascript" src="../layui/layui.js"></script>
     <style>
-        .wyp-label {
-            float: left;
-            display: block;
-            padding: 9px 15px;
-            font-weight: 400;
-            line-height: 20px;
-            text-align: right;
-        }
         .bar6 input {
             height: 42px;
             width: 300px;
@@ -51,10 +43,7 @@
         }
         .layui-nav *{font-size:15px}
     </style>
-
 </head>
-
-
 <body>
 <ul class="layui-nav" style="background-color: #464646">
     <li class="layui-nav-item"><a href="blogindex.html"><img style="width: 200px" src="../img/yujiblog.png"></a></li>
@@ -62,17 +51,12 @@
     <li class="layui-nav-item"><a href="life.html">生活乐趣</a></li>
     <li class="layui-nav-item">
         <a href="javascript:;">心情随笔</a>
-        <!--<dl class="layui-nav-child">-->
-        <!--<dd><a href="">移动模块</a></dd>-->
-        <!--<dd><a href="">后台模版</a></dd>-->
-        <!--<dd><a href="">电商平台</a></dd>-->
-        <!--</dl>-->
     </li>
     <li class="layui-nav-item"><a href="discuss.html">留言</a></li>
     <li class="layui-nav-item layui-this"><a href="aboutMe.html">关于我</a></li>
     <li class="layui-nav-item bar6" style="padding: 2px 0px;" ><input type="text"  placeholder="请输入您要搜索的内容..." ><button type="submit" ></button></li>
     <li class="layui-nav-item" style="float:right;" >
-        <a href="javascript:;" id="nameOne"></a>
+        <a href="login.html" id="nameOne"></a>
     </li>
     <li class="layui-nav-item" style="float:right;" >
         <a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"></a>
@@ -91,14 +75,28 @@
     <legend style="font-size:40px">开发中</legend>
 </fieldset>
 </body>
-<script>
-    layui.use(['element','layer' ], function(){
+<script type="text/javascript">
+    layui.use(['element','layer'], function(){
         var ab = layui.jquery
             ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
         var layer = layui.layer;
+
         window.onload = function(){
+            func0();
             func1();
         };
+        //获取当前时间
+        function func0() {
+            var show = document.getElementById("show");
+            setInterval(function() {
+                var time = new Date();   // 程序计时的月从0开始取值后+1
+                var m = time.getMonth() + 1;
+                var t = time.getFullYear() + "-" + m + "-"
+                    + time.getDate() + " " + time.getHours() + ":"
+                    + time.getMinutes() + ":" + time.getSeconds();
+                show.innerHTML = t;
+            }, 1000);
+        }
         function func1() {
             $.ajax({
                 url: "getUserInfo",
@@ -112,7 +110,6 @@
                         $("#nameOne").removeAttr("href");
                     }else if(data.flag == false){
                         $("#nameOne").text(data.data);
-
                     }
                 }
             });
@@ -199,22 +196,6 @@
             location.hash = 'test='+ ab(this).attr('lay-id');
         });
 
-        //获取当前时间
-        window.onload = function() {
-            var show = document.getElementById("show");
-            setInterval(function() {
-                var time = new Date();   // 程序计时的月从0开始取值后+1
-                var m = time.getMonth() + 1;
-                var t = time.getFullYear() + "-" + m + "-"
-                    + time.getDate() + " " + time.getHours() + ":"
-                    + time.getMinutes() + ":" + time.getSeconds();
-                show.innerHTML = t;
-            }, 1000);
-        };
-
     });
-
-
 </script>
-
 </html>

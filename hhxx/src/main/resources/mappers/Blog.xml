@@ -4,14 +4,23 @@
 <mapper namespace="com.xx.dao.BlogDao">
 
     <insert id="insertBlogSum" parameterType="com.xx.vo.BlogSum">
-        insert into blogSum (blogId,fabulos,comments,forwars,visit)
-        values #{blogId},#{fabulos},#{comments},#{forwars},#{visit}
+        insert into blogSum (blogId,fabulous,comments,collections,visit)
+        values (#{blogId},#{fabulous},#{comments},#{collections},#{visit})
     </insert>
 
     <insert id="insertBlogInfo" parameterType="com.xx.vo.BlogInfo">
-        insert into blogInfo (blogId,blogName,blogLabel,blogType,createDate)
-        values #{blogId},#{blogName},#{blogLabel},#{blogType},#{createDate}
+        insert into blogInfo (blogId,blogName,blogLabel,blogType,blogContent,createDate)
+        values (#{blogId},#{blogName},#{blogLabel},#{blogType},#{blogContent},#{createDate})
     </insert>
+
+    <insert id="insertUserBlog" parameterType="com.xx.vo.UserBlog">
+        insert into userBlogs (userId,blogId)
+        values (#{userId},#{blogId})
+    </insert>
+
+    <update id="addUserBlogs" parameterType="string">
+        update userSum set blogs = blogs+1 where userId = #{userId}
+    </update>
 
     <update id="updateBlog" parameterType="com.xx.vo.BlogInfo">
         update blogInfo set blogName = #{blogName},blogLabel = #{blogLabel},blogType = #{blogType}

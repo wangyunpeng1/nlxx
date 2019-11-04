@@ -72,7 +72,7 @@
     <li class="layui-nav-item"><a href="aboutMe.html">关于我</a></li>
     <li class="layui-nav-item bar6" style="padding: 2px 0px;" ><input type="text"  placeholder="请输入您要搜索的内容..." ><button type="submit" ></button></li>
     <li class="layui-nav-item" style="float:right;" >
-        <a href="javascript:;" id="nameOne"></a>
+        <a href="login.html" id="nameOne"></a>
     </li>
     <li class="layui-nav-item" style="float:right;" >
         <a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"></a>
@@ -97,8 +97,21 @@
             ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
         var layer = layui.layer;
         window.onload = function(){
+            func0();
             func1();
         };
+        //获取当前时间
+        function func0() {
+            var show = document.getElementById("show");
+            setInterval(function() {
+                var time = new Date();   // 程序计时的月从0开始取值后+1
+                var m = time.getMonth() + 1;
+                var t = time.getFullYear() + "-" + m + "-"
+                    + time.getDate() + " " + time.getHours() + ":"
+                    + time.getMinutes() + ":" + time.getSeconds();
+                show.innerHTML = t;
+            }, 1000);
+        }
         function func1() {
             $.ajax({
                 url: "getUserInfo",
@@ -198,19 +211,6 @@
         element.on('tab(test)', function(elem){
             location.hash = 'test='+ ab(this).attr('lay-id');
         });
-
-        //获取当前时间
-        window.onload = function() {
-            var show = document.getElementById("show");
-            setInterval(function() {
-                var time = new Date();   // 程序计时的月从0开始取值后+1
-                var m = time.getMonth() + 1;
-                var t = time.getFullYear() + "-" + m + "-"
-                    + time.getDate() + " " + time.getHours() + ":"
-                    + time.getMinutes() + ":" + time.getSeconds();
-                show.innerHTML = t;
-            }, 1000);
-        };
 
     });
 

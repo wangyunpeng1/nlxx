@@ -16,6 +16,10 @@ public interface BlogDao
     public void insertBlogSum(BlogSum blogSum);
     //插入博客信息
     public void insertBlogInfo(BlogInfo blogInfo);
+    //用户添加博客
+    public void insertUserBlog(UserBlog userBlog);
+    //用户博客数+1
+    public void addUserBlogs(@Param("userId") String userId);
     //更改博客信息
     public void updateBlog(BlogInfo blogInfo);
     //博客浏览量+1

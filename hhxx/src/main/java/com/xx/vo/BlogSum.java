@@ -3,7 +3,7 @@ package com.xx.vo;
 public class BlogSum
 {
     private String blogId;
-    private long fabulos;
+    private long fabulous;
     private long comments;
     private long collections;
     private long visit;
@@ -16,12 +16,12 @@ public class BlogSum
         this.blogId = blogId;
     }
 
-    public long getFabulos() {
-        return fabulos;
+    public long getFabulous() {
+        return fabulous;
     }
 
-    public void setFabulos(long fabulos) {
-        this.fabulos = fabulos;
+    public void setFabulous(long fabulous) {
+        this.fabulous = fabulous;
     }
 
     public long getComments() {

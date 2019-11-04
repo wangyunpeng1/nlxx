@@ -216,8 +216,21 @@
         });
 
         window.onload = function(){
+            func0();
             func1();
         };
+        //获取当前时间
+        function func0() {
+            var show = document.getElementById("show");
+            setInterval(function() {
+                var time = new Date();   // 程序计时的月从0开始取值后+1
+                var m = time.getMonth() + 1;
+                var t = time.getFullYear() + "-" + m + "-"
+                    + time.getDate() + " " + time.getHours() + ":"
+                    + time.getMinutes() + ":" + time.getSeconds();
+                show.innerHTML = t;
+            }, 1000);
+        }
         function func1() {
             $.ajax({
                 url: "getUserInfo",
@@ -316,19 +329,6 @@
                 }
             })
         }
-        //获取当前时间
-        window.onload = function() {
-            var show = document.getElementById("show");
-            setInterval(function() {
-                var time = new Date();   // 程序计时的月从0开始取值后+1
-                var m = time.getMonth() + 1;
-                var t = time.getFullYear() + "-" + m + "-"
-                    + time.getDate() + " " + time.getHours() + ":"
-                    + time.getMinutes() + ":" + time.getSeconds();
-                show.innerHTML = t;
-            }, 1000);
-        };
-
         //触发事件
         var active = {
             tabAdd: function(){

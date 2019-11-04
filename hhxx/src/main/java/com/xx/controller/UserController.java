@@ -6,6 +6,7 @@ import com.xx.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
@@ -100,8 +101,9 @@ public class UserController
      * @return
      */
     @PostMapping("uploadBlog")
-    public Result uploadBlog(@RequestBody Blog blog)
+    public Result uploadBlog(@RequestBody Blog blog, HttpSession session)
     {
+        blog.setUserId(session.getAttribute("userId").toString());
         blogService.uploadBlog(blog);
         return new Result(true, StatusCode.OK,"上传成功");
 
@@ -113,8 +115,9 @@ public class UserController
      * @return
      */
     @PostMapping("updateBlog")
-    public Result updateBlog(@RequestBody Blog blog)
+    public Result updateBlog(@RequestBody Blog blog,HttpSession session)
     {
+        String userId = session.getAttribute("userId").toString();
         blogService.updateBlog(blog);
         return new Result(true, StatusCode.OK,"修改成功");
     }

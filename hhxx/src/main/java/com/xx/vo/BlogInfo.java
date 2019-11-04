@@ -6,6 +6,7 @@ public class BlogInfo
     private String blogName;
     private String blogLabel;
     private String blogType;
+    private String blogContent;
     private String createDate;
 
     public String getBlogId() {
@@ -37,7 +38,16 @@ public class BlogInfo
     }
 
     public void setBlogType(String blogType) {
+
         this.blogType = blogType;
+    }
+
+    public String getBlogContent() {
+        return blogContent;
+    }
+
+    public void setBlogContent(String blogContent) {
+        this.blogContent = blogContent;
     }
 
     public String getCreateDate() {

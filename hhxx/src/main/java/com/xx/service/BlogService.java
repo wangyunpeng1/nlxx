@@ -1,6 +1,5 @@
 package com.xx.service;
 
-import com.sun.javafx.collections.MappingChange;
 import com.xx.dao.BlogDao;
 import com.xx.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +25,12 @@ public class BlogService
     {
         BlogSum blogSum = new BlogSum();
         BlogInfo blogInfo = new BlogInfo();
+        UserBlog userBlog = new UserBlog();
         blog.setBlogId(getId());
         //blogSum表
         blogSum.setBlogId(blog.getBlogId());
         blogSum.setComments(0);
-        blogSum.setFabulos(0);
+        blogSum.setFabulous(0);
         blogSum.setCollections(0);
         blogSum.setVisit(0);
         blogDao.insertBlogSum(blogSum);
@@ -39,8 +39,15 @@ public class BlogService
         blogInfo.setBlogName(blog.getBlogName());
         blogInfo.setBlogLabel(blog.getBlogLabel());
         blogInfo.setBlogType(blog.getBlogType());
+        blogInfo.setBlogContent(blog.getBlogContent());
         blogInfo.setCreateDate(getTime());
         blogDao.insertBlogInfo(blogInfo);
+        //userBlogs表
+        userBlog.setBlogId(blog.getBlogId());
+        userBlog.setUserId(blog.getUserId());
+        blogDao.insertUserBlog(userBlog);
+        //userSum表
+        blogDao.addUserBlogs(blog.getUserId());
     }
 
     //修改博客
@@ -87,7 +94,7 @@ public class BlogService
         Blog blog = new Blog();
         blog.setBlogId(blogId);
         blog.setVisit(blogSum.getVisit());
-        blog.setFabulos(blogSum.getFabulos());
+        blog.setFabulous(blogSum.getFabulous());
         blog.setComments(blogSum.getComments());
         blog.setCollections(blogSum.getCollections());
         blog.setBlogName(blogInfo.getBlogName());
