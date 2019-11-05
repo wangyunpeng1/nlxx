@@ -130,7 +130,6 @@
         </dl>
     </li>
     <li class="layui-nav-item layui-this" style="float:right;"><a href="uploadBlog.html">写博客</a></li>
-    <li class="layui-nav-item" style="float:right;" ><a id="show"></a></li>
 
 
 </ul>
@@ -157,9 +156,8 @@
              <div class="wyp-input-block2">
                     <select name="interest" id="blogType" >
                         <option value="" selected=""></option>
-                        <option value="0">原创</option>
-                        <option value="1">转载</option>
-                        <option value="2">翻译</option>
+                        <option value="0">技术分享</option>
+                        <option value="1">生活乐趣</option>
                     </select>
              </div>
          </div>
@@ -206,21 +204,9 @@
             ,element = layui.element;
 
         window.onload = function(){
-            func0();
             func1();
         };
-        //获取当前时间
-        function func0() {
-            var show = document.getElementById("show");
-            setInterval(function() {
-                var time = new Date();   // 程序计时的月从0开始取值后+1
-                var m = time.getMonth() + 1;
-                var t = time.getFullYear() + "-" + m + "-"
-                    + time.getDate() + " " + time.getHours() + ":"
-                    + time.getMinutes() + ":" + time.getSeconds();
-                show.innerHTML = t;
-            }, 1000);
-        }
+
         function func1() {
             $.ajax({
                 url: "getUserInfo",

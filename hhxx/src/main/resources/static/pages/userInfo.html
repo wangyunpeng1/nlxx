@@ -95,7 +95,6 @@
         </dl>
     </li>
     <li class="layui-nav-item" style="float:right;"><a href="uploadBlog.html">写博客</a></li>
-    <li class="layui-nav-item" style="float:right;" ><a id="show"></a></li>
 </ul>
 
 <div class="layui-row">
@@ -185,52 +184,18 @@
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px; border-color:#5FB878">
                 <legend style="font-size:40px">我的博客</legend>
             </fieldset>
-            <label id="blogName" class="wyp-label" style="font-size:25px;margin-left: 50px">www</label>
-            <br><br><br>
-            <p id="blogContent" style="font-size:17px;margin-left: 50px"></p>
-            <label class="wyp-label2" style="margin-left: 50px">创建时间：</label>
-            <label id="creatDate1" class="wyp-label2"></label>
-
-            <div id="page"></div>
         </div>
     </div>
 </div>
 </body>
 <script>
-    layui.use(['element','layer','laypage'] , function(){
+    layui.use(['element','layer'] , function(){
         var ab = layui.jquery
             ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
         var layer = layui.layer;
-        var laypage = layui.laypage;
-
-        laypage.render({
-            elem: 'page'
-            ,count: 100
-            ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
-            ,jump: function(obj, first){
-                if(!first){
-                    layer.msg('第'+ obj.curr +'页', {offset: 'b'});
-                }
-                console.log(obj);
-            }
-        });
-
         window.onload = function(){
-            func0();
             func1();
         };
-        //获取当前时间
-        function func0() {
-            var show = document.getElementById("show");
-            setInterval(function() {
-                var time = new Date();   // 程序计时的月从0开始取值后+1
-                var m = time.getMonth() + 1;
-                var t = time.getFullYear() + "-" + m + "-"
-                    + time.getDate() + " " + time.getHours() + ":"
-                    + time.getMinutes() + ":" + time.getSeconds();
-                show.innerHTML = t;
-            }, 1000);
-        }
         function func1() {
             $.ajax({
                 url: "getUserInfo",
@@ -304,6 +269,10 @@
                                     layer.open({
                                         title: '提示'
                                         , content: '温馨提示:修改成功！'
+                                        , btn:['确认']
+                                        , btn1:function () {
+                                            window.location = 'userInfo.html'
+                                        }
                                     });
                                 }else {
                                     var msg = "code:" + data.code + ";desc:" + data.desc;

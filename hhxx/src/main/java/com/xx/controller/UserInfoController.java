@@ -45,7 +45,5 @@ public class UserInfoController
         }catch (NullPointerException e){
             return new Result(false,StatusCode.noLogin,"未登陆","登陆");
         }
-
-
     }
 }

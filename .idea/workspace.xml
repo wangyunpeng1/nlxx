@@ -6,22 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogindex.html" line="184" />
+    <bookmark url="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogindex.html" line="183" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac6ea37e-dc6c-49e1-98dd-3b4c277974ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/LeaveAMessController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/LeaveAMessDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/LeaveAMessService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Mess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/resources/mappers/LeaveAMess.xml.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/resources/static/img/留言背景.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hhxx/src/main/resources/static/img/留言背景.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffxx/src/main/java/com/xx/vo/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/ffxx/src/main/java/com/xx/vo/StatusCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/BlogDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/BlogDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/BlogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Blog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/BlogInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/BlogInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/BlogSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/BlogSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hhxx/src/main/resources/mappers/Blog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/resources/mappers/Blog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/aboutMe.html" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/aboutMe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogCommon.html" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogCommon.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogindex.html" afterDir="false" />
@@ -47,11 +44,12 @@
     <session id="1003659355">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="40" />
+          <entry key="project.closed" value="42" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="6" />
           <entry key="project.open.time.3" value="8" />
@@ -68,36 +66,40 @@
           <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.76" value="1" />
           <entry key="project.open.time.81" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="43" />
+          <entry key="project.opened" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="13" />
-          <entry key="css" value="11" />
-          <entry key="html" value="94" />
+          <entry key="css" value="12" />
+          <entry key="fxml" value="1" />
+          <entry key="html" value="107" />
           <entry key="iml" value="2" />
-          <entry key="java" value="616" />
+          <entry key="java" value="627" />
+          <entry key="jpg" value="1" />
           <entry key="js" value="4" />
           <entry key="rnc" value="2" />
           <entry key="ts" value="3" />
-          <entry key="xml" value="104" />
+          <entry key="xml" value="106" />
           <entry key="yml" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="13" />
-          <entry key="CSS" value="11" />
-          <entry key="HTML" value="94" />
+          <entry key="CSS" value="12" />
+          <entry key="HTML" value="107" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="616" />
+          <entry key="Image" value="1" />
+          <entry key="JAVA" value="627" />
           <entry key="JavaScript" value="4" />
           <entry key="RNG Compact" value="2" />
           <entry key="TypeScript" value="3" />
-          <entry key="XML" value="104" />
+          <entry key="XML" value="107" />
           <entry key="YAML" value="32" />
         </counts>
       </usages-collector>
@@ -105,23 +107,23 @@
         <counts>
           <entry key="css" value="4" />
           <entry key="dummy" value="36" />
-          <entry key="html" value="6436" />
+          <entry key="html" value="8396" />
           <entry key="iml" value="1" />
-          <entry key="java" value="17267" />
+          <entry key="java" value="18126" />
           <entry key="txt" value="2" />
-          <entry key="xml" value="2771" />
+          <entry key="xml" value="2980" />
           <entry key="yml" value="341" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="6436" />
+          <entry key="HTML" value="8396" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="17267" />
+          <entry key="JAVA" value="18126" />
           <entry key="PLAIN_TEXT" value="38" />
-          <entry key="SQL" value="68" />
-          <entry key="XML" value="2703" />
+          <entry key="SQL" value="74" />
+          <entry key="XML" value="2906" />
           <entry key="YAML" value="341" />
         </counts>
       </usages-collector>
@@ -130,26 +132,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogCommon.html">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/LeaveAMessDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#7;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/BlogController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2031">
-              <caret line="129" column="29" lean-forward="true" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+            <state relative-caret-position="235">
+              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -158,37 +144,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+            <state relative-caret-position="275">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/BlogService.java">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/discuss.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/BlogDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserBlog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="155">
+              <caret line="119" selection-start-line="119" selection-end-line="119" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#9;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#fieldset#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#7071#7077#0" expanded="true" />
+                <element signature="e#7077#7083#0" expanded="true" />
+                <element signature="e#7083#7089#0" expanded="true" />
+                <element signature="e#7089#7095#0" expanded="true" />
+                <element signature="e#7095#7101#0" expanded="true" />
+                <element signature="e#7101#7107#0" expanded="true" />
+                <element signature="e#7107#7113#0" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#2;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#2;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#0;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#2;n#div#0;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -196,8 +207,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogindex.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2009">
-              <caret line="198" column="20" lean-forward="true" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
+            <state relative-caret-position="105">
+              <caret line="195" column="35" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -220,11 +231,36 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogCommon.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#7;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/aboutMe.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/uploadBlog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="271" column="34" lean-forward="true" selection-start-line="271" selection-start-column="34" selection-end-line="271" selection-end-column="34" />
+            <state relative-caret-position="255">
+              <caret line="202" column="29" lean-forward="true" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -234,11 +270,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/userInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="304" column="15" selection-start-line="304" selection-start-column="15" selection-end-line="304" selection-end-column="15" />
+            <state relative-caret-position="225">
+              <caret line="185" column="23" lean-forward="true" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -256,19 +292,42 @@
                 <element signature="n#style#0;n#label#1;n#div#5;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#legend#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Blog.java">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/life.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="130">
+              <caret line="86" column="82" selection-start-line="86" selection-start-column="82" selection-end-line="86" selection-end-column="82" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#7;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#legend#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Mess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+              <folding>
+                <element signature="e#213#214#0" expanded="true" />
+                <element signature="e#242#243#0" expanded="true" />
+                <element signature="e#355#356#0" expanded="true" />
+                <element signature="e#384#385#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -278,9 +337,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -303,7 +363,6 @@
       <find>userName</find>
       <find>register</find>
       <find>session</find>
-      <find>show</find>
       <find>select</find>
       <find>getUserInfo</find>
       <find>uploadFile</find>
@@ -314,6 +373,8 @@
       <find>$</find>
       <find>ab</find>
       <find>Blog</find>
+      <find>name1</find>
+      <find>show</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -325,12 +386,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/esRestory/ESRepository.java" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/ESDao.java" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/ESBlog.java" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/ESService.java" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/ESController.java" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/Home.html" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Login.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/resources/mappers/UserInfo.xml" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/UserInfoDao.java" />
@@ -359,13 +414,6 @@
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/config/QuartzBlogTopTenFabulousConfig.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/config/QuartzBlogTopTenVisitConfig.java" />
         <option value="$PROJECT_DIR$/ffxx/src/main/java/com/xx/vo/StatusCode.java" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogindex.html" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/userInfo.html" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/life.html" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/discuss.html" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/aboutMe.html" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogCommon.html" />
-        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/BlogDao.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/BlogInfo.java" />
@@ -375,7 +423,20 @@
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/BlogSum.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserController.java" />
         <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/BlogService.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Mess.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/mappers/LeaveAMess.xml.fxml" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/LeaveAMessDao.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/mappers/LeaveAMess.xml.xml" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/LeaveAMessService.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/LeaveAMessController.java" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/life.html" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/discuss.html" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogindex.html" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogCommon.html" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/aboutMe.html" />
         <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/uploadBlog.html" />
+        <option value="$PROJECT_DIR$/hhxx/src/main/resources/static/pages/userInfo.html" />
       </list>
     </option>
   </component>
@@ -406,8 +467,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="290" />
-    <option name="y" value="20" />
+    <option name="x" value="255" />
+    <option name="y" value="325" />
     <option name="width" value="3490" />
     <option name="height" value="1780" />
   </component>
@@ -491,6 +552,17 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="xx" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nlxx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nlxx" type="462c0819:PsiDirectoryNode" />
+              <item name="hhxx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="xx" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -564,7 +636,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572852278973" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572941777676" />
     <property name="last_opened_file_path" value="E:/3333/uploads" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -574,15 +646,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\idea\nlxx\hhxx\src\main\resources\static\img" />
-      <recent name="E:\idea\nlxx\hhxx\src\main\resources\static" />
-      <recent name="E:\idea\nlxx\hhxx\src\main\resources\static\pages" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\idea\nlxx\hhxx\src\main\resources\static\img" />
       <recent name="E:\idea\nlxx\hhxx\src\main\resources\static\pages" />
       <recent name="E:\idea\nlxx\hhxx\src\main\resources\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\idea\nlxx\hhxx\src\main\resources\static\img" />
+      <recent name="E:\idea\nlxx\hhxx\src\main\resources\static" />
+      <recent name="E:\idea\nlxx\hhxx\src\main\resources\static\pages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -785,7 +857,9 @@
       <workItem from="1572596870006" duration="5591000" />
       <workItem from="1572758339212" duration="7195000" />
       <workItem from="1572829414238" duration="20266000" />
-      <workItem from="1572852455974" duration="10883000" />
+      <workItem from="1572852455974" duration="11467000" />
+      <workItem from="1572915699660" duration="23098000" />
+      <workItem from="1572941829827" duration="3173000" />
     </task>
     <task id="LOCAL-00001" summary="博客">
       <created>1570531349175</created>
@@ -948,11 +1022,18 @@
       <option name="project" value="LOCAL" />
       <updated>1572835161298</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="博客">
+      <created>1572864392994</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1572864392994</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="386136000" />
+    <option name="totallyTimeSpent" value="412991000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -965,18 +1046,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8959276" visible="true" weight="0.24380443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.89943075" visible="true" weight="0.25050235" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" sideWeight="0.1040724" side_tool="true" visible="true" weight="0.24380443" />
+      <window_info id="Web" order="7" sideWeight="0.10056926" side_tool="true" visible="true" weight="0.25050235" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.2875354" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.28611898" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -988,7 +1070,7 @@
       <window_info anchor="bottom" id="Spring" order="11" weight="0.32907802" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32907802" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49932975" weight="0.4036827" />
-      <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49765572" visible="true" weight="0.37393767" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49765572" visible="true" weight="0.25354108" />
       <window_info anchor="bottom" id="Application Servers" order="15" weight="0.32874355" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1017,68 +1099,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/config/QuartzBlogTopTenVisitConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/config/QuartzBlogTopTenFabulousConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ffxx/src/main/java/com/xx/vo/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/login.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/layui/css/layui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="47529" selection-start-line="1" selection-start-column="47501" selection-end-line="1" selection-end-column="47529" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/phoneLogin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3775">
-          <caret line="151" column="31" selection-start-line="151" selection-start-column="31" selection-end-line="151" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/HhxxApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/config/QuartzRedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ffxx/src/main/java/com/xx/vo/StatusCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/layui/layui.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.16/tomcat-embed-core-9.0.16.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
@@ -1096,38 +1116,10 @@
     <entry file="file://$PROJECT_DIR$/hhxx/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/life.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#7;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#legend#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/aboutMe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#7;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#legend#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1138,22 +1130,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/UserInfo.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/Login.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/discuss.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="212" column="11" selection-start-line="212" selection-start-column="11" selection-end-line="212" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/Blog.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1264,9 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1025">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1298,10 +1271,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java">
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/BlogController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="27" column="68" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="68" />
+        <state relative-caret-position="2850">
+          <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="103" column="43" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/BlogDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserBlog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1312,62 +1309,177 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/UserBlog.java">
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/register.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/phoneLogin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="504">
+          <caret line="151" column="31" selection-start-line="151" selection-start-column="31" selection-end-line="151" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/BlogController.java">
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/img/留言背景.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/layui/css/layui.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2031">
-          <caret line="129" column="29" lean-forward="true" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+        <state relative-caret-position="25">
+          <caret line="1" column="19493" lean-forward="true" selection-start-line="1" selection-start-column="19493" selection-end-line="1" selection-end-column="19603" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/Login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/BlogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="85" column="5" lean-forward="true" selection-start-line="79" selection-start-column="4" selection-end-line="85" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/mappers/LeaveAMess.xml.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/LeaveAMessService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/BlogDao.java">
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="3350">
+          <caret line="134" column="48" selection-start-line="134" selection-start-column="48" selection-end-line="134" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/LeaveAMessController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+        <state relative-caret-position="625">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/service/BlogService.java">
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/vo/Mess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        <state relative-caret-position="150">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding>
+            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogCommon.html">
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/controller/UserInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        <state relative-caret-position="275">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/java/com/xx/dao/LeaveAMessDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/life.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="86" column="82" selection-start-line="86" selection-start-column="82" selection-end-line="86" selection-end-column="82" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#7;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#legend#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/discuss.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#9;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#fieldset#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7071#7077#0" expanded="true" />
+            <element signature="e#7077#7083#0" expanded="true" />
+            <element signature="e#7083#7089#0" expanded="true" />
+            <element signature="e#7089#7095#0" expanded="true" />
+            <element signature="e#7095#7101#0" expanded="true" />
+            <element signature="e#7101#7107#0" expanded="true" />
+            <element signature="e#7107#7113#0" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#2;n#div#0;n#div#6;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogindex.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2009">
-          <caret line="198" column="20" lean-forward="true" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
+        <state relative-caret-position="105">
+          <caret line="195" column="35" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1389,10 +1501,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/blogCommon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#7;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/aboutMe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/uploadBlog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="202" column="29" lean-forward="true" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/userInfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="304" column="15" selection-start-line="304" selection-start-column="15" selection-end-line="304" selection-end-column="15" />
+        <state relative-caret-position="225">
+          <caret line="185" column="23" lean-forward="true" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="23" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1410,21 +1555,6 @@
             <element signature="n#style#0;n#label#1;n#div#5;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#6;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#legend#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hhxx/src/main/resources/static/pages/uploadBlog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="271" column="34" lean-forward="true" selection-start-line="271" selection-start-column="34" selection-end-line="271" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#6;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
