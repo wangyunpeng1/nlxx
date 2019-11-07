@@ -27,17 +27,17 @@ public class UserSumJob implements Job
         for (int i=0;i<info.size();i++)
         {
             UserSum userSum = new UserSum();
-            String userid = info.get(i);
+            String userId = info.get(i);
             //总粉丝
-            int fansSum = redisTemplate.opsForSet().size("star_"+userid).intValue();
-            userSum.setUserId(userid);
+            int fansSum = redisTemplate.opsForSet().size("star_"+userId).intValue();
+            userSum.setUserId(userId);
             userSum.setFans(fansSum);
-            List<String> blogIdInfo = userDao.blogId(userid);
+            List<String> blogIdInfo = userDao.blogId(userId);
             //总赞
             int sum = 0;
             for (int j=0;j<blogIdInfo.size();j++)
             {
-                String blogId = blogIdInfo.get(i);
+                String blogId = blogIdInfo.get(j);
                 int a = redisTemplate.opsForSet().size("fabulous_"+blogId).intValue();
                 sum = sum + a;
             }

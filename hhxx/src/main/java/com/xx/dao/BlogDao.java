@@ -11,7 +11,6 @@ import java.util.List;
 @Component
 public interface BlogDao
 {
-
     //插入博客各种总数
     public void insertBlogSum(BlogSum blogSum);
     //插入博客信息
@@ -36,6 +35,8 @@ public interface BlogDao
     public void addCollections(@Param("blogId") String blogId);
     //减少博客收藏
     public void reduceCollections(@Param("blogId") String blogId);
+    //查看博客收藏
+    public long selectCollections(@Param("blogId") String blogId);
     //查赞排行前10的博客
     public List<BlogFabulous> topTenFabulous();
     //查浏览量排行前10的博客
@@ -44,6 +45,4 @@ public interface BlogDao
     public List<BlogCollections> topTenCollections();
     //查看博客名字
     public String getBlogName(@Param("blogId") String blogId);
-
-
 }

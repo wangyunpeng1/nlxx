@@ -36,14 +36,15 @@ public class UserController
     }
 
     /**
-     * 查看用户博客
-     * @param userBlog
+     * 加载个人信息中的我的博客
+     * @param session
      * @return
      */
-    @PostMapping("userBlogs")
-    public Result userBlogs(@RequestBody UserBlog userBlog)
+    @GetMapping("userBlogs")
+    public Result userBlogs(HttpSession session)
     {
-        List<UserBlog> userBlogs = userService.userBlogs(userBlog);
+        String userId = session.getAttribute("userId").toString();
+        List<Blog> userBlogs = userService.userBlogs(userId);
         return new Result(true, StatusCode.OK,"查询成功",userBlogs);
     }
 
@@ -53,22 +54,27 @@ public class UserController
      * @return
      */
     @PostMapping("userCollectionBlogs")
-    public Result userCollectionBlogs(@RequestBody UserBlog userBlog)
+    public Result userCollectionBlogs(@RequestBody UserBlog userBlog,HttpSession session)
     {
-        userService.userCollectionBlogs(userBlog);
-        return new Result(true, StatusCode.OK,"收藏成功");
+        userBlog.setUserId(session.getAttribute("userId").toString());
+        boolean flag = userService.userCollectionBlogs(userBlog);
+        if (flag){
+            return new Result(false, StatusCode.OK,"取消成功");
+        }else{
+            return new Result(true, StatusCode.OK,"收藏成功");
+        }
     }
 
     /**
-     * 用户取消收藏博客
+     * 获取博客的收藏总数
      * @param userBlog
      * @return
      */
-    @PostMapping("userCancelCollectionBlogs")
-    public Result userCancelCollectionBlogs(@RequestBody UserBlog userBlog)
+    @PostMapping("selectCollections")
+    public Result selectCollections(@RequestBody UserBlog userBlog)
     {
-        userService.userCancelCollectionBlogs(userBlog);
-        return new Result(true, StatusCode.OK,"取消成功");
+        long a = blogService.selectCollections(userBlog.getBlogId());
+        return new Result(true, StatusCode.OK,"查看成功",a);
     }
 
     /**
@@ -85,13 +91,14 @@ public class UserController
 
     /**
      * 查看用户各种数
-     * @param userId
+     * @param session
      * @return
      */
-    @PostMapping("userSum")
-    public Result userSum(@PathVariable String userId)
+    @GetMapping("userSum")
+    public Result userSum(HttpSession session)
     {
-        List<UserSum> userSums = userService.userSum(userId);
+        String userId = session.getAttribute("userId").toString();
+        UserSumPlus userSums = userService.userSum(userId);
         return new Result(true, StatusCode.OK,"查看各种数成功",userSums);
     }
 
@@ -106,7 +113,6 @@ public class UserController
         blog.setUserId(session.getAttribute("userId").toString());
         blogService.uploadBlog(blog);
         return new Result(true, StatusCode.OK,"上传成功");
-
     }
 
     /**
@@ -118,6 +124,7 @@ public class UserController
     public Result updateBlog(@RequestBody Blog blog,HttpSession session)
     {
         String userId = session.getAttribute("userId").toString();
+        blog.setUserId(userId);
         blogService.updateBlog(blog);
         return new Result(true, StatusCode.OK,"修改成功");
     }
@@ -128,25 +135,26 @@ public class UserController
      * @return
      */
     @PostMapping("fabulousBlog")
-    public Result fabulousBlog(@RequestBody UserBlog userBlog)
+    public Result fabulousBlog(@RequestBody UserBlog userBlog,HttpSession session)
     {
+        userBlog.setUserId(session.getAttribute("userId").toString());
         boolean flag = userService.fabulousBlog(userBlog);
         if (flag){
             return new Result(true, StatusCode.OK,"点赞成功");
         }else {
-            return new Result(true, StatusCode.OK,"取消成功");
+            return new Result(false, StatusCode.OK,"取消成功");
         }
     }
 
     /**
-     * 查询博客点赞数（测试上述功能）
-     * @param blogId
+     * 获取博客点赞数
+     * @param userBlog
      * @return
      */
-    @PostMapping("selectFabulous/{blogId}")
-    public Result selectFabulous(@PathVariable String blogId)
+    @PostMapping("selectFabulous")
+    public Result selectFabulous(@RequestBody UserBlog userBlog)
     {
-        long a = userService.selectBulous(blogId);
+        long a = userService.selectBulous(userBlog.getBlogId());
         return new Result(true, StatusCode.OK,"查看成功",a);
     }
 }

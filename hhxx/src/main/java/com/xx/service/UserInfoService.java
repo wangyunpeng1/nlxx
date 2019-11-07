@@ -21,6 +21,7 @@ public class UserInfoService
     public void updateUserInfo(UserInfo userInfo)
     {
         userInfoDao.updateUserInfo(userInfo);
+        redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"userName",userInfo.getUserName());
         redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"sex",userInfo.getSex());
         redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"email",userInfo.getEmail());
         redisTemplate.opsForHash().put("user_"+userInfo.getUserId(),"trade",userInfo.getTrade());

@@ -14,7 +14,7 @@ public interface UserDao
     //关注
     public void userFlow(UserFans userFans);
     //查看用户的博客
-    public List<UserBlog> userBlogs(UserBlog userBlog);
+    public List<Blog> userBlogs(@Param("userId") String userId);
     //用户收藏博客
     public void userCollectionBlogs(UserBlog userBlog);
     //用户取消收藏博客
@@ -22,11 +22,13 @@ public interface UserDao
     //用户查看收藏的博客
     public List<UserBlog> lookUserCollectionBlogs(UserBlog userBlog);
     //查看用户的各种总数
-    public List<UserSum> userSum(@Param("userId") String userId);
+    public UserSum userSum(@Param("userId") String userId);
     //获取所有用户Id
     public List<String> userId();
     //获取用户所有博客Id
     public List<String> blogId(@Param("userId") String userId);
     //修改用户各种总数
     public void updateUserSum(UserSum userSum);
+    //查看用户的关注数
+    public long selectFlow(@Param("userId") String userId);
 }

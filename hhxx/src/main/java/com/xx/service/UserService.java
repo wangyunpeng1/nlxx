@@ -2,9 +2,7 @@ package com.xx.service;
 
 import com.xx.dao.BlogDao;
 import com.xx.dao.UserDao;
-import com.xx.vo.UserBlog;
-import com.xx.vo.UserFans;
-import com.xx.vo.UserSum;
+import com.xx.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -38,23 +36,26 @@ public class UserService
     }
 
     //查看用户博客
-    public List<UserBlog> userBlogs(UserBlog userBlog)
+    public List<Blog> userBlogs(String userId)
     {
-        return userDao.userBlogs(userBlog);
+        return userDao.userBlogs(userId);
     }
 
     //收藏博客
-    public void userCollectionBlogs(UserBlog userBlog)
+    public boolean userCollectionBlogs(UserBlog userBlog)
     {
-        userDao.userCollectionBlogs(userBlog);
-        blogDao.addCollections(userBlog.getBlogId());
-    }
-
-    //取消收藏
-    public void userCancelCollectionBlogs(UserBlog userBlog)
-    {
-        userDao.userCancelCollectionBlogs(userBlog);
-        blogDao.reduceCollections(userBlog.getBlogId());
+        boolean flag = redisTemplate.opsForSet().isMember("user_collection_"+userBlog.getUserId(),"blog_"+userBlog.getBlogId());
+        if (flag){
+            redisTemplate.opsForSet().remove("user_collection_"+userBlog.getUserId(),"blog_"+userBlog.getBlogId());
+            userDao.userCancelCollectionBlogs(userBlog);
+            blogDao.reduceCollections(userBlog.getBlogId());
+            return flag;
+        }else {
+            redisTemplate.opsForSet().add("user_collection_"+userBlog.getUserId(),"blog_"+userBlog.getBlogId());
+            userDao.userCollectionBlogs(userBlog);
+            blogDao.addCollections(userBlog.getBlogId());
+            return flag;
+        }
     }
 
     //查看用户收藏的博客
@@ -64,9 +65,17 @@ public class UserService
     }
 
     //查看用户各种数
-    public List<UserSum> userSum(String userId)
+    public UserSumPlus userSum(String userId)
     {
-        return userDao.userSum(userId);
+        UserSumPlus userSumPlus = new UserSumPlus();
+        UserSum userSum = userDao.userSum(userId);
+        userSumPlus.setBlogs(userSum.getBlogs());
+        userSumPlus.setFans(userSum.getFans());
+        userSumPlus.setVisit(userSum.getVisit());
+        userSumPlus.setFabulous(userSum.getFabulous());
+        userSumPlus.setCollections(redisTemplate.opsForSet().size("user_collection_"+userId));
+        userSumPlus.setFlows(userDao.selectFlow(userId));
+        return userSumPlus;
     }
 
     //用户点赞博客

@@ -105,6 +105,13 @@ public class BlogService
         return blog;
     }
 
+    //获取博客的收藏数
+    public long selectCollections(String blogId)
+    {
+        long a = blogDao.selectCollections(blogId);
+        return a;
+    }
+
     //获取前10点赞的博客
     public Set<String> getTopTenFabulousBlogs()
     {

@@ -42,25 +42,29 @@
         where blogId = #{blogId}
     </select>
 
-    <update id="addFabulous" parameterType="com.xx.vo.BlogFabulous">
-        update blogSum set fabulous = (fabulous + 1)
+    <update id="addFabulous" parameterType="string">
+        update blogSum set fabulous=fabulous+1
         where blogId = #{blogId}
     </update>
 
-    <update id="reduceFabulous" parameterType="com.xx.vo.Blog">
-        update blogSum set fabulous = (fabulous - 1)
+    <update id="reduceFabulous" parameterType="string">
+        update blogSum set fabulous=fabulous-1
         where blogId = #{blogId}
     </update>
 
     <update id="addCollections" parameterType="com.xx.vo.Blog">
         update blogSum set collections = (collections + 1)
-        where collections = #{collections}
+        where blogId = #{blogId}
     </update>
 
     <update id="reduceCollections" parameterType="com.xx.vo.Blog">
         update blogSum set collections = (collections - 1)
-        where collections = #{collections}
+        where blogId = #{blogId}
     </update>
+
+    <select id="selectCollections" parameterType="string" resultType="long">
+        select count(*) from userCollectionBlogs where blogId = #{blogId}
+    </select>
 
     <select id="topTenFabulous" resultType="com.xx.vo.BlogFabulous">
         select blogId,`fabulous` from blogSum order by fabulous limit 0,10

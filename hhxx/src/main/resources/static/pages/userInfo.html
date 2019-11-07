@@ -60,6 +60,16 @@
             color: #F9F0DA;
         }
         .layui-nav *{font-size:15px}
+        .layui-card-wyp1-body {
+            position: relative;
+            padding: 3px 20px;
+            line-height: 25px;
+        }
+        .layui-card-wyp2-body {
+            position: relative;
+            padding: 0px 10px;
+            line-height: 25px;
+        }
     </style>
 
 </head>
@@ -107,37 +117,37 @@
                 <div class="layui-col-xs2">
                 <dl style="text-align: center;">
                     <dt style="font-size:20px">博客数</dt>
-                    <dd>0</dd>
+                    <dd id="blogSum">0</dd>
                 </dl>
                 </div>
                 <div class="layui-col-xs2">
                 <dl style="text-align: center;">
                     <dt style="font-size:20px">粉丝数</dt>
-                    <dd>0</dd>
+                    <dd id="fansSum">0</dd>
                 </dl>
                 </div>
                 <div class="layui-col-xs2">
                 <dl style="text-align: center;">
                     <dt style="font-size:20px">关注数</dt>
-                    <dd>0</dd>
+                    <dd id="flowSum">0</dd>
                 </dl>
                 </div>
                 <div class="layui-col-xs2" >
                 <dl style="text-align: center;">
                     <dt style="font-size:20px">收藏数</dt>
-                    <dd>0</dd>
+                    <dd id="collectionsSum">0</dd>
                 </dl>
                 </div>
                 <div class="layui-col-xs2">
                 <dl style="text-align: center;">
                     <dt style="font-size:20px">获赞数</dt>
-                    <dd>0</dd>
+                    <dd id="fablousSum">0</dd>
                 </dl>
                 </div>
                 <div class="layui-col-xs2">
                 <dl style="text-align: center;">
                     <dt style="font-size:20px">访问量</dt>
-                    <dd>0</dd>
+                    <dd id="visitSum">0</dd>
                 </dl>
                 </div>
 
@@ -185,6 +195,78 @@
                 <legend style="font-size:40px">我的博客</legend>
             </fieldset>
         </div>
+        <div class="layui-card" id="div1" style="margin-left: 40px;margin-right: 20px;display: block">
+            <div id="blogId1" style="display:none"></div>
+            <div class="layui-card-wyp-header" style="font-size:25px;background-color: #72939a;"><a href="" id="blogName1" style="color: #f1f1f1">博客名</a></div>
+            <div class="layui-card-wyp1-body" style="font-size:20px;background-color: #72939a;"><a href="" id="content1" style="color: #f1a77b">博客内容</a></div>
+            <div class="layui-card-wyp2-body layui-icon" style="font-size:13px;background-color: #72939a">
+                <a href="" class="layui-icon-note" id="blogType1" style="margin-left: 5px;color: #e0cce2">技术分享</a>
+                <a href="javascript:" class="layui-icon-date" id="time1" style="margin-left: 280px;color: #e0cce2">上传时间:2019.11.5</a>
+                <a href="javascript:" class="layui-icon-rate" id="collections1" style="margin-left: 30px;color: #e0cce2">收藏(0)</a>
+                <a href="javascript:" class="layui-icon-praise" id="fabulous1" style="margin-left: 30px;color: #e0cce2">点赞(0)</a>
+                <a href="javascript:" class="layui-icon-reply-fill" id="comments1" style="margin-left: 30px;color: #e0cce2">评论(0)</a>
+                <a href="javascript:" class="layui-icon-read" id="visit1" style="margin-left: 30px;color: #e0cce2">浏览(0)</a>
+            </div>
+        </div>
+        <div class="layui-card" id="div2" style="margin-left: 40px;margin-right: 20px;display: block">
+            <div id="blogId2" style="display:none"></div>
+            <div class="layui-card-wyp-header" style="font-size:25px;background-color: #72939a" ><a href="" id="blogName2" style="color: #f1f1f1">博客名</a></div>
+            <div class="layui-card-wyp1-body" style="font-size:20px;background-color: #72939a"><a href="" id="content2" style="color: #f1a77b">博客内容</a></div>
+            <div class="layui-card-wyp2-body layui-icon" style="font-size:13px;background-color: #72939a">
+                <a href="" class="layui-icon-note" id="blogType2" style="margin-left: 5px;color: #e0cce2">技术分享</a>
+                <a href="javascript:" class="layui-icon-date" id="time2" style="margin-left: 280px;color: #e0cce2">上传时间:2019.11.5</a>
+                <a href="javascript:" class="layui-icon-rate" id="collections2" style="margin-left: 30px;color: #e0cce2">收藏(0)</a>
+                <a href="javascript:" class="layui-icon-praise" id="fabulous2" style="margin-left: 30px;color: #e0cce2">点赞(0)</a>
+                <a href="javascript:" class="layui-icon-reply-fill" id="comments2" style="margin-left: 30px;color: #e0cce2">评论(0)</a>
+                <a href="javascript:" class="layui-icon-read" id="visit2" style="margin-left: 30px;color: #e0cce2">浏览(0)</a>
+            </div>
+        </div>
+        <div class="layui-card" id="div3" style="margin-left: 40px;margin-right: 20px;display: block">
+            <div id="blogId3" style="display:none"></div>
+            <div class="layui-card-wyp-header" style="font-size:25px;background-color: #72939a"><a href="" id="blogName3" style="color: #f1f1f1">博客名</a></div>
+            <div class="layui-card-wyp1-body" style="font-size:20px;background-color: #72939a"><a href="" id="content3" style="color: #f1a77b">博客内容</a></div>
+            <div class="layui-card-wyp2-body layui-icon" style="font-size:13px;background-color: #72939a">
+                <a href="" class="layui-icon-note" id="blogType3" style="margin-left: 5px;color: #e0cce2">技术分享</a>
+                <a href="javascript:" class="layui-icon-date" id="time3" style="margin-left: 280px;color: #e0cce2">上传时间:2019.11.5</a>
+                <a href="javascript:" class="layui-icon-rate" id="collections3" style="margin-left: 30px;color: #e0cce2">收藏(0)</a>
+                <a href="javascript:" class="layui-icon-praise" id="fabulous3" style="margin-left: 30px;color: #e0cce2">点赞(0)</a>
+                <a href="javascript:" class="layui-icon-reply-fill" id="comments3" style="margin-left: 30px;color: #e0cce2">评论(0)</a>
+                <a href="javascript:" class="layui-icon-read" id="visit3" style="margin-left: 30px;color: #e0cce2">浏览(0)</a>
+            </div>
+        </div>
+        <div class="layui-card" id="div4" style="margin-left: 40px;margin-right: 20px;display: block">
+            <div id="blogId4" style="display:none"></div>
+            <div class="layui-card-wyp-header" style="font-size:25px;background-color: #72939a" ><a href="" id="blogName4" style="color: #f1f1f1">博客名</a></div>
+            <div class="layui-card-wyp1-body"  style="font-size:20px;background-color: #72939a"><a href="" id="content4" style="color: #f1a77b">博客内容</a></div>
+            <div class="layui-card-wyp2-body layui-icon" style="font-size:13px;background-color: #72939a">
+                <a href="" class="layui-icon-note" id="blogType4" style="margin-left: 5px;color: #e0cce2">技术分享</a>
+                <a href="javascript:" class="layui-icon-date" id="time4" style="margin-left: 280px;color: #e0cce2">上传时间:2019.11.5</a>
+                <a href="javascript:" class="layui-icon-rate" id="collections4" style="margin-left: 30px;color: #e0cce2">收藏(0)</a>
+                <a href="javascript:" class="layui-icon-praise" id="fabulous4" style="margin-left: 30px;color: #e0cce2">点赞(0)</a>
+                <a href="javascript:" class="layui-icon-reply-fill" id="comments4" style="margin-left: 30px;color: #e0cce2">评论(0)</a>
+                <a href="javascript:" class="layui-icon-read" id="visit4" style="margin-left: 30px;color: #e0cce2">浏览(0)</a>
+            </div>
+        </div>
+        <div class="layui-card" id="div5" style="margin-left: 40px;margin-right: 20px;display: block">
+            <div id="blogId5" style="display:none"></div>
+            <div class="layui-card-wyp-header" style="font-size:25px;background-color: #72939a" ><a href="" id="blogName5" style="color: #f1f1f1">博客名</a></div>
+            <div class="layui-card-wyp1-body"  style="font-size:20px;background-color: #72939a"><a href="" id="content5" style="color: #f1a77b">博客内容</a></div>
+            <div class="layui-card-wyp2-body layui-icon" style="font-size:13px;background-color: #72939a">
+                <a href="" class="layui-icon-note" id="blogType5" style="margin-left: 5px;color: #e0cce2">技术分享</a>
+                <a href="javascript:" class="layui-icon-date" id="time5" style="margin-left: 280px;color: #e0cce2">上传时间:2019.11.5</a>
+                <a href="javascript:" class="layui-icon-rate" id="collections5" style="margin-left: 30px;color: #e0cce2">收藏(0)</a>
+                <a href="javascript:" class="layui-icon-praise" id="fabulous5" style="margin-left: 30px;color: #e0cce2">点赞(0)</a>
+                <a href="javascript:" class="layui-icon-reply-fill" id="comments5" style="margin-left: 30px;color: #e0cce2">评论(0)</a>
+                <a href="javascript:" class="layui-icon-read" id="visit5" style="margin-left: 30px;color: #e0cce2">浏览(0)</a>
+            </div>
+        </div>
+        <div class="layui-card" style="margin-left: 40px;margin-right: 20px">
+            <div class="layui-card-wyp2-header" style="font-size:20px;background-color: blanchedalmond">
+                <button class="layui-btn layui-btn-radius" type="button" style="margin-left: 100px;" id="upPage">上一页</button>
+                <button class="layui-btn layui-btn-radius" type="button" style="margin-left: 600px;" id="downPage">下一页</button>
+            </div>
+        </div>
+
     </div>
 </div>
 </body>
@@ -193,8 +275,12 @@
         var ab = layui.jquery
             ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
         var layer = layui.layer;
+        var numberOne = 0;
+        var numberSum = 0;
         window.onload = function(){
             func1();
+            func2();
+            func3();
         };
         function func1() {
             $.ajax({
@@ -213,6 +299,584 @@
                         $("#trade").text(data.data["trade"]);
                         $("#introduction").text(data.data["introduction"]);
                         $("#creatDate").text(data.data["registerDate"]);
+                    }
+                }
+            });
+        }
+        function func2(){
+            $.ajax({
+                url: "userBlogs",
+                type: "GET",
+                contentType: "application/json",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        console.log(data);
+                        nu = 1;
+                        numberSum = data.data.length;
+                        for(var w=data.data.length-1-numberOne;w>=data.data.length-5-numberOne;w--)
+                        {
+                            $("#blogId"+nu).text(data.data[w]["blogId"]);
+                            $("#blogName"+nu).text(data.data[w]["blogName"]);
+                            $("#content"+nu).html(data.data[w]["blogContent"].substring(0,70)+".............");
+                            if (data.data[w]["blogType"]==0){
+                                $("#blogType"+nu).text("技术分享");
+                            }else if (data.data[w]["blogType"]==1){
+                                $("#blogType"+nu).text("生活乐趣");
+                            }else {
+                                $("#blogType"+nu).text("未知");
+                            }
+                            $("#time"+nu).text("上传时间:"+data.data[w]["createDate"]);
+                            $("#collections"+nu).text("收藏("+data.data[w]["collections"]+")");
+                            $("#fabulous"+nu).text("点赞("+data.data[w]["fabulous"]+")");
+                            $("#comments"+nu).text("评论("+data.data[w]["comments"]+")");
+                            $("#visit"+nu).text("浏览("+data.data[w]["visit"]+")");
+                            if (w==0){
+                                console.log(nu);
+                                for (var i=nu+1;i<=5;i++) {
+                                    $("#blogName"+i).text("");
+                                    $("#content"+i).text("");
+                                    $("#blogType"+i).text("");
+                                    $("#time"+i).text("");
+                                    $("#collections"+i).text("");
+                                    $("#fabulous"+i).text("");
+                                    $("#comments"+i).text("");
+                                    $("#visit"+i).text("");
+                                }
+                                break;
+                            }
+                            nu++;
+                        }
+                    }
+                }
+            })
+        }
+        //用户总数
+        function func3(){
+            $.ajax({
+                url: "userSum",
+                type: "GET",
+                contentType: "application/json",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        console.log(data);
+                        $("#blogSum").text(data.data["blogs"]);
+                        $("#fansSum").text(data.data["fans"]);
+                        $("#flowSum").text(data.data["flows"]);
+                        $("#collectionsSum").text(data.data["collections"]);
+                        $("#fablousSum").text(data.data["fabulous"]);
+                        $("#visitSum").text(data.data["visit"]);
+                    }
+                }
+            })
+        }
+        //上一页
+        $("#upPage").on("click",function(){
+            upPage();
+        });
+        function upPage(){
+            numberOne = numberOne-5;
+            if (numberOne<=-5){
+                numberOne = 0;
+                layer.open({
+                    title: '提示'
+                    , icon:0
+                    , content: '不能再上一页啦，已经到头了'
+                });
+            }else{
+                func2();
+            }
+        }
+        //下一页
+        $("#downPage").on("click",function () {
+            downPage();
+        });
+        function downPage(){
+            numberOne = numberOne +5;
+            if (numberOne >=numberSum){
+                numberOne = numberOne -5;
+                layer.open({
+                    title: '提示'
+                    , icon:0
+                    , content: '不能再下一页啦，已经到头了'
+                })
+            }else {
+                func2()
+            }
+        }
+        //点赞
+        $("#fabulous1").on("click",function(){
+            fabulous1();
+        });
+        function fabulous1(){
+            var blogId = document.getElementById("blogId1").textContent;
+            $.ajax({
+                url: "fabulousBlog",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("点赞成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous1").text("点赞("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous1").text("点赞("+data.data+")");
+                            }
+                        })
+                    }
+                }
+            });
+        }
+        $("#fabulous2").on("click",function(){
+            fabulous2();
+        });
+        function fabulous2(){
+            var blogId = document.getElementById("blogId2").textContent;
+            $.ajax({
+                url: "fabulousBlog",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("点赞成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous2").text("点赞("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous2").text("点赞("+data.data+")");
+                            }
+                        })
+                    }
+                }
+            });
+        }
+        $("#fabulous3").on("click",function(){
+            fabulous3();
+        });
+        function fabulous3(){
+            var blogId = document.getElementById("blogId3").textContent;
+            $.ajax({
+                url: "fabulousBlog",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("点赞成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous3").text("点赞("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous3").text("点赞("+data.data+")");
+                            }
+                        })
+                    }
+                }
+            });
+        }
+        $("#fabulous4").on("click",function(){
+            fabulous4();
+        });
+        function fabulous4(){
+            var blogId = document.getElementById("blogId4").textContent;
+            $.ajax({
+                url: "fabulousBlog",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("点赞成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous4").text("点赞("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous4").text("点赞("+data.data+")");
+                            }
+                        })
+                    }
+                }
+            });
+        }
+        $("#fabulous5").on("click",function(){
+            fabulous5();
+        });
+        function fabulous5(){
+            var blogId = document.getElementById("blogId5").textContent;
+            $.ajax({
+                url: "fabulousBlog",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("点赞成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous5").text("点赞("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectFabulous",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#fabulous5").text("点赞("+data.data+")");
+                            }
+                        })
+                    }
+                }
+            });
+        }
+
+        $("#collections1").on("click",function () {
+            collections1();
+        });
+        function collections1(){
+            var blogId = document.getElementById("blogId1").textContent;
+            $.ajax({
+                url: "userCollectionBlogs",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("收藏成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections1").text("收藏("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections1").text("收藏("+data.data+")");
+                            }
+                        })
+                    }
+                }
+            });
+        }
+
+        $("#collections2").on("click",function(){
+            collections2();
+        });
+        function collections2(){
+            var blogId = document.getElementById("blogId2").textContent;
+            $.ajax({
+                url: "userCollectionBlogs",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("收藏成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections2").text("收藏("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections2").text("收藏("+data.data+")");
+                            }
+                        })
+                    }
+                }
+            });
+        }
+        $("#collections3").on("click",function(){
+            collections3();
+        });
+        function collections3(){
+            var blogId = document.getElementById("blogId3").textContent;
+            $.ajax({
+                url: "userCollectionBlogs",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("收藏成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections3").text("收藏("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections3").text("收藏("+data.data+")");
+                            }
+                        })
+                    }
+                }
+            });
+        }
+
+        $("#collections4").on("click",function(){
+            collections4();
+        });
+        function collections4(){
+            var blogId = document.getElementById("blogId4").textContent;
+            $.ajax({
+                url: "userCollectionBlogs",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("收藏成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections4").text("收藏("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections4").text("收藏("+data.data+")");
+                            }
+                        })
+                    }
+                }
+            });
+        }
+        $("#collections5").on("click",function(){
+            collections5();
+        });
+        function collections5(){
+            var blogId = document.getElementById("blogId5").textContent;
+            $.ajax({
+                url: "userCollectionBlogs",
+                type: "POST",
+                contentType: "application/json",
+                data:"{\"blogId\":\"" + blogId + "\"}",
+                async: true,
+                success: function (data) {
+                    console.log(data);
+                    if (data.flag == true) {
+                        layer.msg("收藏成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections5").text("收藏("+data.data+")");
+                            }
+                        })
+                    }else if (data.flag == false) {
+                        layer.msg("取消成功", {
+                            icon: 1
+                        });
+                        $.ajax({
+                            url: "selectCollections",
+                            type: "POST",
+                            contentType: "application/json",
+                            data:"{\"blogId\":\"" + blogId + "\"}",
+                            async: true,
+                            success: function (data) {
+                                console.log(data);
+                                $("#collections5").text("收藏("+data.data+")");
+                            }
+                        })
                     }
                 }
             });
