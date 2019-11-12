@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xx.dao.LeaveAMessDao">
     <select id="getMess" resultType="com.xx.vo.Mess">
-          select * from leavingAMessage
+          select * from leavingAMessage order by createDate
     </select>
 
     <insert id="insertMess" parameterType="com.xx.vo.Mess">

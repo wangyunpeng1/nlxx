@@ -51,7 +51,7 @@
     <li class="layui-nav-item "><a href="blogCommon.html">技术分享</a></li>
     <li class="layui-nav-item"><a href="life.html">生活乐趣</a></li>
     <li class="layui-nav-item">
-        <a href="javascript:;">心情随笔</a>
+        <a href="moodEssay.html">心情随笔</a>
         <!--<dl class="layui-nav-child">-->
             <!--<dd><a href="">移动模块</a></dd>-->
             <!--<dd><a href="">后台模版</a></dd>-->
@@ -60,7 +60,7 @@
     </li>
     <li class="layui-nav-item"><a href="discuss.html">留言</a></li>
     <li class="layui-nav-item"><a href="aboutMe.html">关于我</a></li>
-    <li class="layui-nav-item bar6" style="padding: 2px 0px;" ><input type="text"  placeholder="请输入您要搜索的内容..." ><button type="submit" ></button></li>
+    <li class="layui-nav-item bar6" style="margin-left: 10px" ><input type="text"  placeholder="请输入您要搜索的内容..." ><button type="submit" ></button></li>
     <li class="layui-nav-item" style="float:right;" >
         <a href="login.html" id="nameOne"></a>
     </li>
@@ -68,9 +68,9 @@
         <a href="javascript:;"><img class="layui-nav-img" src="../img/头像.png"></a>
         <dl class="layui-nav-child">
             <dd><a id="PeCe">个人中心</a></dd>
-            <dd><a href="javascript:;">博客管理</a></dd>
-            <dd><a href="javascript:;">我的收藏</a></dd>
-            <dd><a href="javascript:;">我的关注</a></dd>
+            <dd><a href="blogAdmin.html">博客管理</a></dd>
+            <dd><a href="myCollection.html">我的收藏</a></dd>
+            <dd><a href="myFlow.html">我的关注</a></dd>
             <dd><a href="login.html">注销</a></dd>
         </dl>
     </li>
@@ -80,105 +80,115 @@
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
     <legend style="font-size:40px">首页</legend>
 </fieldset>
+<div class="layui-row">
+    <div class="layui-col-xs1">
+        &nbsp;
+    </div>
+    <div class="layui-col-xs8 layui-carousel" id="live1">
+        <div  carousel-item >
+            <div style="background-color:mediumaquamarine"></div>
+            <div style="background-color:green"></div>
+            <div style="background-color:blue"></div>
+            <div style="background-color:orange"></div>
+            <div style="background-color:red"></div>
+        </div>
+    </div>
+    <div class="layui-col-xs2">
+        <a href=""><img style="height:170px" src="../img/猫1.jpg"></a>
+        <a href=""><img style="height:170px;width: 212.28px" src="../img/猫2.jpg"></a>
 
-<div class="layui-carousel layui-row" id="live1">
-    <div carousel-item class="layui-col-md6">
-        <!--<div><img src="../img/猫1.jpg"></div>-->
-        <!--<div><img src="../img/猫2.jpg"></div>-->
-        <!--<div><img src="../img/猫3.jpg"></div>-->
-        <!--<div><img src="../img/猫4.jpg"></div>-->
-        <!--<div><img src="../img/猫5.jpg"></div>-->
-        <div style="background-color:mediumaquamarine"></div>
-        <div style="background-color:green"></div>
-        <div style="background-color:blue"></div>
-        <div style="background-color:orange"></div>
-        <div style="background-color:red"></div>
+    </div>
+    <div class="layui-col-xs1">
+        &nbsp;
     </div>
 </div>
-
-<div class="layui-row layui-col-space15">
-    <div class="layui-col-md3">
-        <div class="layui-card">
-            <div class="layui-card-header" style="font-size:30px;background-color: #afb4db;">点赞排行TOP10</div>
-            <div class="layui-card-body">
-                <a style="font-size:23px" id="Fab1"></a>
-                <br>
-                    <a style="font-size:23px" id="Fab2"></a>
-                <br>
-                        <a style="font-size:23px" id="Fab3"></a>
-                <br>
-                            <a style="font-size:23px" id="Fab4"></a>
-                <br>
-                                <a style="font-size:23px" id="Fab5"></a>
-                <br>
-                                    <a style="font-size:23px" id="Fab6"></a>
-                <br>
-                                        <a style="font-size:23px" id="Fab7"></a>
-                <br>
-                                            <a style="font-size:23px" id="Fab8"></a>
-                <br>
-                                                <a style="font-size:23px" id="Fab9"></a>
-                <br>
-                                                    <a style="font-size:23px" id="Fab10"></a>
-            </div>
-        </div>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend style="font-size:40px;margin-left: 750px">哦吼</legend>
+</fieldset>
+<div class="layui-row">
+    <div class="layui-col-xs1">
+        &nbsp;
     </div>
-    <div class="layui-col-md1"></div>
-        <div class="layui-col-md3">
-            <div class="layui-card">
-                <div class="layui-card-header" style="font-size:30px;background-color: #afb4db;">收藏排行TOP10</div>
-                <div class="layui-card-body">
-                    <a style="font-size:23px" id="Col1"></a>
-                    <br>
-                        <a style="font-size:23px" id="Col2"></a>
-                    <br>
-                            <a style="font-size:23px" id="Col3"></a>
-                    <br>
-                                <a style="font-size:23px" id="Col4"></a>
-                    <br>
-                                    <a style="font-size:23px" id="Col5"></a>
-                    <br>
-                                        <a style="font-size:23px" id="Col6"></a>
-                    <br>
-                                            <a style="font-size:23px" id="Col7"></a>
-                    <br>
-                                                <a style="font-size:23px" id="Col8"></a>
-                    <br>
-                                                    <a style="font-size:23px" id="Col9"></a>
-                    <br>
-                                                        <a style="font-size:23px" id="Col10"></a>
-                </div>
-            </div>
-        </div>
-    <div class="layui-col-md1"></div>
-            <div class="layui-col-md3">
-                <div class="layui-card">
-                    <div class="layui-card-header" style="font-size:30px;background-color: #afb4db;">浏览排行TOP10</div>
-                    <div class="layui-card-body">
-                        <a style="font-size:23px" id="Vis1"></a>
-                        <br>
-                            <a style="font-size:23px" id="Vis2"></a>
-                        <br>
-                                <a style="font-size:23px" id="Vis3"></a>
-                        <br>
-                                    <a style="font-size:23px" id="Vis4"></a>
-                        <br>
-                                        <a style="font-size:23px" id="Vis5"></a>
-                        <br>
-                                            <a style="font-size:23px" id="Vis6"></a>
-                        <br>
-                                                <a style="font-size:23px" id="Vis7"></a>
-                        <br>
-                                                    <a style="font-size:23px" id="Vis8"></a>
-                        <br>
-                                                        <a style="font-size:23px" id="Vis9"></a>
-                        <br>
-                                                            <a style="font-size:23px" id="Vis10"></a>
-                    </div>
-                </div>
-            </div>
+    <div class="layui-col-xs8">
+        &nbsp;
     </div>
-
+    <div class="layui-col-xs3">
+        <fieldset class="layui-elem-field site-demo-button" style="margin-top: 30px;margin-right: 10px">
+            <legend style="margin-left: 125px">今日推荐</legend>
+            <div>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab1"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab2"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab3"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab4"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab5"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab6"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab7"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab8"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab9"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Fab10"></a>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset class="layui-elem-field site-demo-button" style="margin-top: 30px;margin-right: 10px">
+            <legend style="margin-left: 125px">往期推荐</legend>
+            <div>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis1"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis2"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis3"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis4"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis5"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis6"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis7"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis8"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis9"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Vis10"></a>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset class="layui-elem-field site-demo-button" style="margin-top: 30px;margin-right: 10px">
+            <legend style="margin-left: 125px">收藏排行</legend>
+            <div>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col1"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col2"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col3"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col4"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col5"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col6"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col7"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col8"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col9"></a>
+                <br><br>
+                <a href="" style="font-size:20px;margin-left: 20px" id="Col10"></a>
+            </div>
+        </fieldset>
+    </div>
+</div>
 </body>
 <script type="text/javascript">
     layui.use(['element','layer','carousel', 'form'], function(){
@@ -189,7 +199,7 @@
             ,form = layui.form;
         carousel.render({
             elem: '#live1'
-            ,width: '700px'
+            ,width: '70%'
             ,height: '340px'
             ,interval: 3000
         });
@@ -228,16 +238,16 @@
                 success: function (body) {
                     console.log(body);
                     if (body.flag == true) {
-                        $("#Fab1").text("Nob.1:"+body.data[9]);
-                        $("#Fab2").text("Nob.2:"+body.data[8]);
-                        $("#Fab3").text("Nob.3:"+body.data[7]);
-                        $("#Fab4").text("Nob.4:"+body.data[6]);
-                        $("#Fab5").text("Nob.5:"+body.data[5]);
-                        $("#Fab6").text("Nob.6:"+body.data[4]);
-                        $("#Fab7").text("Nob.7:"+body.data[3]);
-                        $("#Fab8").text("Nob.8:"+body.data[2]);
-                        $("#Fab9").text("Nob.9:"+body.data[1]);
-                        $("#Fab10").text("Nob.10:"+body.data[0]);
+                        $("#Fab1").text("Nob.1: "+body.data[9]);
+                        $("#Fab2").text("Nob.2: "+body.data[8]);
+                        $("#Fab3").text("Nob.3: "+body.data[7]);
+                        $("#Fab4").text("Nob.4: "+body.data[6]);
+                        $("#Fab5").text("Nob.5: "+body.data[5]);
+                        $("#Fab6").text("Nob.6: "+body.data[4]);
+                        $("#Fab7").text("Nob.7: "+body.data[3]);
+                        $("#Fab8").text("Nob.8: "+body.data[2]);
+                        $("#Fab9").text("Nob.9: "+body.data[1]);
+                        $("#Fab10").text("Nob.10: "+body.data[0]);
                     }
                 }
             });
@@ -252,16 +262,16 @@
                 success: function (body) {
                     console.log(body);
                     if (body.flag == true) {
-                        $("#Col1").text("Nob.1:"+body.data[9]);
-                        $("#Col2").text("Nob.2:"+body.data[8]);
-                        $("#Col3").text("Nob.3:"+body.data[7]);
-                        $("#Col4").text("Nob.4:"+body.data[6]);
-                        $("#Col5").text("Nob.5:"+body.data[5]);
-                        $("#Col6").text("Nob.6:"+body.data[4]);
-                        $("#Col7").text("Nob.7:"+body.data[3]);
-                        $("#Col8").text("Nob.8:"+body.data[2]);
-                        $("#Col9").text("Nob.9:"+body.data[1]);
-                        $("#Col10").text("Nob.10:"+body.data[0]);
+                        $("#Col1").text("Nob.1: "+body.data[9]);
+                        $("#Col2").text("Nob.2: "+body.data[8]);
+                        $("#Col3").text("Nob.3: "+body.data[7]);
+                        $("#Col4").text("Nob.4: "+body.data[6]);
+                        $("#Col5").text("Nob.5: "+body.data[5]);
+                        $("#Col6").text("Nob.6: "+body.data[4]);
+                        $("#Col7").text("Nob.7: "+body.data[3]);
+                        $("#Col8").text("Nob.8: "+body.data[2]);
+                        $("#Col9").text("Nob.9: "+body.data[1]);
+                        $("#Col10").text("Nob.10: "+body.data[0]);
                     }
                 }
             });
@@ -276,16 +286,16 @@
                 success: function (body) {
                     console.log(body);
                     if (body.flag == true) {
-                        $("#Vis1").text("Nob.1:"+body.data[9]);
-                        $("#Vis2").text("Nob.2:"+body.data[8]);
-                        $("#Vis3").text("Nob.3:"+body.data[7]);
-                        $("#Vis4").text("Nob.4:"+body.data[6]);
-                        $("#Vis5").text("Nob.5:"+body.data[5]);
-                        $("#Vis6").text("Nob.6:"+body.data[4]);
-                        $("#Vis7").text("Nob.7:"+body.data[3]);
-                        $("#Vis8").text("Nob.8:"+body.data[2]);
-                        $("#Vis9").text("Nob.9:"+body.data[1]);
-                        $("#Vis10").text("Nob.10:"+body.data[0]);
+                        $("#Vis1").text("Nob.1: "+body.data[9]);
+                        $("#Vis2").text("Nob.2: "+body.data[8]);
+                        $("#Vis3").text("Nob.3: "+body.data[7]);
+                        $("#Vis4").text("Nob.4: "+body.data[6]);
+                        $("#Vis5").text("Nob.5: "+body.data[5]);
+                        $("#Vis6").text("Nob.6: "+body.data[4]);
+                        $("#Vis7").text("Nob.7: "+body.data[3]);
+                        $("#Vis8").text("Nob.8: "+body.data[2]);
+                        $("#Vis9").text("Nob.9: "+body.data[1]);
+                        $("#Vis10").text("Nob.10: "+body.data[0]);
                     }
                 }
             });
