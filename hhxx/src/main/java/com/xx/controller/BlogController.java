@@ -86,7 +86,7 @@ public class BlogController
         //format() 字符串格式化
         String res = sdf.format(date);
 //        本地使用
-        File f=new File("E:\\idea\\nlxx\\hhxx\\src\\main\\resources\\static\\img");
+        File f=new File("E:\\idea\\nlxx\\hhxx\\src\\main\\resources\\static\\uploadImg");
         if(!f.exists())
         {
             try {
@@ -96,22 +96,22 @@ public class BlogController
                 e.printStackTrace();
             }
         }
-        String rootPath = "E:\\idea\\nlxx\\hhxx\\src\\main\\resources\\static\\img";
+        String rootPath = "E:\\idea\\nlxx\\hhxx\\src\\main\\resources\\static\\uploadImg\\";
 //        String rootPath = request.getServletContext().getRealPath("D:/3333/uploads");
         //原文件名称
         String originalFilename = file.getOriginalFilename();
         //定义新名称
         String newFileName = res+originalFilename.substring(originalFilename.lastIndexOf("."));
         //创建年月文件夹
-        Calendar dateTwo = Calendar.getInstance();
-        File dateDirs = new File(dateTwo.get(Calendar.YEAR)
-                + File.separator + (dateTwo.get(Calendar.MONTH)+1));
+//        Calendar dateTwo = Calendar.getInstance();
+//        File dateDirs = new File(dateTwo.get(Calendar.YEAR)
+//                + File.separator + (dateTwo.get(Calendar.MONTH)+1));
         //新文件
-        File newFile = new File(rootPath+File.separator+dateDirs+File.separator+newFileName);
-        if(!newFile.getParentFile().exists()) {
-            //如果目标文件所在的目录不存在，则创建父目录
-            newFile.getParentFile().mkdirs();
-        }
+        File newFile = new File(rootPath+newFileName);
+//        if(!newFile.getParentFile().exists()) {
+//            //如果目标文件所在的目录不存在，则创建父目录
+//            newFile.getParentFile().mkdirs();
+//        }
         //内存写入磁盘
         file.transferTo(newFile);
 //            Map<String,Object> map = new HashMap<String,Object>();
@@ -120,15 +120,14 @@ public class BlogController
 //            System.out.println("bbbb");
 //            return result;
 
-        String fileUrl =  "/img/"+dateTwo.get(Calendar.YEAR)+ "/"+(dateTwo.get(Calendar.MONTH)+1)+ "/"
-                +newFileName;
+        String fileUrl =  "../uploadImg/"+newFileName;
         Map<String,Object> map = new HashMap<String,Object>();
         Map<String,Object> map2 = new HashMap<String,Object>();
         map.put("code",0);
         map.put("msg","上传成功");//提示消息
-        map.put("data",map2);
         map2.put("src",fileUrl);//图片url
         map2.put("title",newFileName);//图片名称，这个会显示在输入框里
+        map.put("data",map2);
         String result = new JSONObject(map).toString();
         return result;
     }

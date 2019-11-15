@@ -22,9 +22,18 @@ spring:
   data:
     elasticsearch:
       cluster-nodes: 121.199.31.35:9300
+  devtools:
+    restart:
+      enabled: true
+  freemarker:
+    cache: false
+debug: true
+#  mvc:
+#    static-path-pattern: /**
+#  resources:
+#    static-locations: classpath:/static/,classpath:/templates/
 
 mybatis:
   mapperLocations: classpath:mappers/*.xml
-
 
 
